@@ -1,0 +1,4 @@
+name_max: 20
+email_max: 255
+pass_min: 6
+user_per_page: 10

@@ -1,0 +1,5 @@
+<li>
+  <%= link_to user.name, user %>
+  <span>|</span>
+  <%= link_to t("users.index.delete"), user, method: :delete, data: {confirm: t("users.index.comfirm")} %>
+</li>

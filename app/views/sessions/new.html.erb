@@ -1,0 +1,25 @@
+<div class="row justify-content-center">
+  <div class="col-md-4">
+    <h1 class="text-center"><%= t ".title" %></h1>
+    <%= form_for(:session, url: login_path) do |f| %>
+      <div class="form-group">
+        <%= f.label :email, t ".label_email" %>
+        <%= f.email_field :email, class: "form-control" %>
+
+      </div>
+       <div class="form-group">
+        <%= f.label :password, t ".label_password" %>
+        <%= f.password_field :password, class: "form-control" %>
+      </div>
+
+      <%= f.label :remember_me, class: "checkbox inline" do %>
+        <%= f.check_box :remember_me, class: "check-box" %>
+        <span><%= t ".remember_content" %></span>
+      <% end %>
+
+      <%= f.submit t(".submit_btn"), class: "btn btn-primary btn-lg btn-block" %>
+    <% end %>
+
+    <p><%= t ".content1" %><%= link_to t(".link1"), signup_path %></p>
+  </div>
+</div>
