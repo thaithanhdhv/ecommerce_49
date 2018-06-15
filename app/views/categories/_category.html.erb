@@ -1,0 +1,14 @@
+<ul>
+  <li><%= category.name %></li>
+  <li>
+    <%= link_to t("edit_cate"), edit_category_path(category) %>
+    <%= link_to t("destroy_cate"), category, method: :delete, data: { confirm: t("are_you") } %>
+  </li>
+  <% if category.parent_id.blank? %>
+    <ul>
+      <% if category.subcategories.any? %>
+        <%= render partial: "subcategory", collection: @subcategories, as: :subcategory %>
+      <% end %>
+    </ul>
+  <% end %>
+</ul>
