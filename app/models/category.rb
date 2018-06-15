@@ -6,5 +6,4 @@ class Category < ApplicationRecord
   validates :name, presence: true, length: {maximum: Settings.category_max}
 
   scope :order_name, ->{order name: :asc}
-
 end
