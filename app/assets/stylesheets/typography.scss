@@ -1,0 +1,105 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  font-size: $body_font_size;
+  font-weight: $body_font_weight;
+  color: $text_color;
+  position: relative;
+  overflow-x: hidden;
+  line-height: 1.75;
+  font-family: "Lato";
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  color: $text_color;
+}
+
+a:hover,
+a:focus {
+  outline: none;
+  color: $accent_color;
+  transition: 0.3s;
+}
+button,
+.btn,
+input[type="submit"] {
+  border-radius: 0 !important;
+  margin-top: 10px;
+}
+.btn-accent {
+  border: 1px solid transparent;
+  background-color: $accent_color;
+  color: $foreground_accent_color;
+  transition: 0.3s;
+  text-transform: uppercase;
+  padding: 15px 35px;
+  &:hover,
+  &:focus{
+    background-color: transparent;
+    border-color: $accent_color;
+    color: $accent_color;
+    text-decoration: none;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: $h1_font_size;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: $h2_font_size;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: $h3_font_size;
+  line-height: 1.4;
+}
+
+h4 {
+  font-size: $h4_font_size;
+  line-height: 1.3;
+}
+
+h5 {
+  font-size: $h5_font_size;
+  line-height: 1.6;
+}
+
+h6 {
+  font-size: $h6_font_size;
+  line-height: 1.7;
+}
+
+p {
+  margin: 0 0 20px 0;
+}
+
+input, textarea, button, select {
+  outline: none;
+}
+
+::-moz-selection {
+  background-color: $accent_color;
+  color: $foreground_accent_color;
+}
+::selection {
+  background-color: $accent_color;
+  color: $foreground_accent_color;
+}
