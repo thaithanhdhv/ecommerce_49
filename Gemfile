@@ -13,6 +13,7 @@ gem "bootstrap", "~> 4.1.1"
 gem "jquery-rails"
 gem "uglifier", ">= 1.3.0"
 gem "will_paginate", "3.1.6"
+gem "turbolinks"
 gem "bootstrap-will_paginate", "1.0.0"
 gem "bcrypt", "~> 3.1.7"
 gem "rubocop", "~> 0.49.1", require: false

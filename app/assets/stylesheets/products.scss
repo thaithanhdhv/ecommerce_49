@@ -1,0 +1,36 @@
+.products-wrap {
+  padding: 60px 0;
+  .product-item-wrap {
+    .product-item-inner {
+      position: relative;
+      &:hover{
+        .product-action{
+          opacity: 1;
+          bottom: 20px;
+          z-index: 5;
+        }
+        .product-info{
+          opacity: 0
+        }
+      }
+    }
+    .product-info {
+      margin-top: 20px;
+      color: $dark_color;
+      text-align: center;
+      .product-title {
+        margin-bottom: 5px;
+      }
+    }
+    .product-action{
+      opacity: 0;
+      z-index: -1;
+      position: absolute;
+      text-align:center;
+      width: 100%;
+      bottom: 0;
+      transition: 0.3s;
+      font-size: 16px;
+    }
+  }
+}
