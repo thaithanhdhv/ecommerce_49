@@ -14,15 +14,14 @@ en:
   update: "Update"
   name: "Name:"
   tilte_cate: "Category"
-  sub_title: "Welcome to April"
   edit_cate: "Edit"
   destroy_cate: "Destroy"
   are_you: "Are you sure?"
   new_cate: "New Category"
   create_btn: "Create"
-  update: "Update"
   image_size: "should be less than 5MB"
   sub_title: "Welcome to April"
+  error_message: "Somethings wrong, please try again"
   users:
     index:
       title: "All users"
@@ -124,3 +123,11 @@ en:
     destroy:
       product_deleted_msg: "Product deleted"
       product_delete_err_msg: "Are you trying to delete the void?"
+  carts:
+    title: "Your Carts"
+    product_name: "Product Name"
+    price: "Price"
+    quantity: "Quantity"
+    delete_confirm: "Are you sure to delete this product from your cart?"
+    empty_cart: "Your cart is empty, plase go to"
+    empty_cart2: "to choose some products"

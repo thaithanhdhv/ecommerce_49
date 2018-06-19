@@ -49,7 +49,7 @@ header {
             right: 8px;
             background-color: transparent;
             border: none;
-            top: -3px;
+            top: 6px;
             font-size: 14px;
             &:hover,
             &:focus {
@@ -61,7 +61,8 @@ header {
     .dropdown-menu{
       border-radius: 0;
       position: absolute;
-       display: block;
+      display: block;
+      visibility: hidden;
       border: none;
       z-index: 99;
       transition: 0.5s;
@@ -89,6 +90,7 @@ header {
           ul.dropdown-menu {
             top: 80px;
             opacity: 1;
+            visibility: inherit;
           }
         }
       }

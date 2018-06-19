@@ -31,6 +31,15 @@ module SessionsHelper
     cookies.delete :remember_token
   end
 
+  def current_order
+    if session[:order_id].present?
+      @orders = Order.find_by id: session[:order_id]
+      @order.nil? ? Order.new : @order
+    else
+      Order.new
+    end
+  end
+
   def log_out
     forget current_user
     session.delete :user_id

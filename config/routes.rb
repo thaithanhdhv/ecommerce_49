@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get "search_products/index"
 
   get "products/index"
   get "products/show"
@@ -12,6 +11,9 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   resources :users, except: %i(destroy index)
   resources :search_products, only: :index
+  resources :products, only: :index
+  resource :cart, only: :show
+  resources :oder_details, only: %i(create update destroy)
   namespace :admin do
     root "users#index"
     resources :users
