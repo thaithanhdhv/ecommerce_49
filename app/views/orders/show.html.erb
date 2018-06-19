@@ -1,0 +1,20 @@
+<table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col"><%= t "orders.id" %></th>
+        <th scope="col"><%= t "orders.status" %></th>
+        <th scope="col"><%= t "orders.date" %></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%= order.id %></td>
+          <td><%= order.status %></td>
+          <td><%= order.created_at.strftime("%m/%d/%Y") %></td>
+          <td><%= link_to t("orders.link"), order_oder_details_path(order) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>

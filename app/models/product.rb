@@ -4,6 +4,7 @@ class Product < ApplicationRecord
   has_many :orders, through: :oder_details
   has_many :ratings
   has_many :comments
+  has_many :cart_items
 
   mount_uploader :image, PictureUploader
   validates :title, presence: true
@@ -14,6 +15,10 @@ class Product < ApplicationRecord
 
   scope :starts_with, ->(name){where "title like ?", "#{name}%"}
   scope :order_price, ->{order(price: :desc)}
+
+  def check_quantity?
+    self.quantity = 0
+  end
 
   private
 

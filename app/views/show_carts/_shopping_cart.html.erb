@@ -1,4 +1,4 @@
-<% if @oder_details.empty? %>
+<% if @cart_items.empty? %>
   <p>
     <%= t "carts.empty_cart" %>
     <%= link_to t("shop"), products_path %>
@@ -15,8 +15,8 @@
       </tr>
     </thead>
     <tbody>
-    <% @oder_details.each do |order_item| %>
-      <%= render "carts/cart_row", product: order_item.product, order_item: order_item %>
+    <% @cart_items.each do |cart_item| %>
+      <%= render "show_carts/cart_row", product: cart_item.product, cart_item: cart_item %>
     <% end %>
     </tbody>
   </table>

@@ -24,8 +24,8 @@ en:
   new_cate: "New Category"
   create_btn: "Create"
   image_size: "should be less than 5MB"
-  sub_title: "Welcome to April"
   error_message: "Somethings wrong, please try again"
+  login_notice: "Please login to your account"
   users:
     index:
       title: "All users"
@@ -133,7 +133,7 @@ en:
     price: "Price"
     quantity: "Quantity"
     delete_confirm: "Are you sure to delete this product from your cart?"
-    empty_cart: "Your cart is empty, plase go to"
+    empty_cart: "Your cart is empty, please go to"
     empty_cart2: "to choose some products"
   admin:
     users:
@@ -216,3 +216,8 @@ en:
         find_category: "can't find category"
       load_category:
         find_category: "can't find category"
+  orders:
+    id: "Order Id"
+    status: "Status"
+    date: "Order Date"
+    link: "Details"

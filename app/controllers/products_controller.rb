@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.order_price.paginate page: params[:page], per_page: Settings.product_per_page
+    @cart_item = current_cart.cart_items.new
   end
 
   def show; end

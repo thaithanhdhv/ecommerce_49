@@ -10,7 +10,7 @@ module SessionsHelper
   end
 
   def current_user
-    if user_id = session[:user_id]
+    if (user_id = session[:user_id])
       @current_user ||= User.find_by id: user_id
     elsif (user_id = cookies.signed[:user_id])
       user = User.find_by id: user_id
@@ -31,13 +31,10 @@ module SessionsHelper
     cookies.delete :remember_token
   end
 
-  def current_order
-    if session[:order_id].present?
-      @orders = Order.find_by id: session[:order_id]
-      @order.nil? ? Order.new : @order
-    else
-      Order.new
-    end
+  def current_cart
+    @cart = Cart.find_by id: session[:cart_id]
+    rescue ActiveRecord::RecordNotFound
+    @cart = Cart.create
   end
 
   def log_out

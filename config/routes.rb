@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get "products/index"
-  get "products/show"
+  get "orders/index"
 
   root "static_pages#home"
   get "/signup", to: "users#new"
@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   resources :products
   resource :cart, only: :show
   resources :oder_details, only: %i(create update destroy)
+  resource :show_carts, only: :show
+  resource :orders, only: :show
+  resources :cart_items, only: %i(create update destroy)
   namespace :admin do
     root "users#index"
     resources :users, except: %i(show)
@@ -22,5 +25,8 @@ Rails.application.routes.draw do
       resources :products
     end
     resources :products
+  end
+  resources :orders do
+    resources :oder_details, only: :index
   end
 end
