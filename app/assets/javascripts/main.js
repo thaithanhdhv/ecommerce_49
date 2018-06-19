@@ -48,25 +48,33 @@
         lastScrollTop = st;
       }
     },
-    input_quantity: function(){
+    input_quantity: function() {
       $('.btn-number').on('click', function() {
 
-      var $button = $(this);
-      var oldValue = $button.parent().find('input').val();
+        var $button = $(this);
+        var oldValue = $button.parent().find('input').val();
 
-      if ($button.hasClass('fa-plus')) {
-        var newVal = parseFloat(oldValue) + 1;
-      } else {
-        if (oldValue > 0) {
-          var newVal = parseFloat(oldValue) - 1;
+        if ($button.hasClass('fa-plus')) {
+          var newVal = parseFloat(oldValue) + 1;
         } else {
-          newVal = 0;
+          if (oldValue > 0) {
+            var newVal = parseFloat(oldValue) - 1;
+          } else {
+            newVal = 0;
+          }
         }
-      }
 
-  $button.parent().find('input').val(newVal);
-
-});
+        $button.parent().find('input').val(newVal);
+      });
+    },
+    admin_menu: function() {
+      $('.sub-menu').click(function() {
+        $(this).toggleClass('submenu-open').parent('li').siblings('li').children('h4.submenu-open').removeClass('submenu-open');
+        $(this).parent().toggleClass('submenu-open').children('ul').slideToggle(500).end().siblings('.submenu-open').removeClass('submenu-open').children('ul').slideUp(500);
+        $('html, body').animate({
+          scrollTop: (0),
+        }, "fast"); /*this will scroll upto the top, not sure if I want to use this yet */
+      });
     }
   };
   $(document).ready(function() {

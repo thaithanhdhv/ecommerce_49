@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-md-6">
+    <div class="col-md-5">
       <h1 class="text-center"><%= t ".title" %></h1>
         <%= form_for @user do |f| %>
           <%= render "shared/error_messages", object: f.object %>
@@ -20,7 +20,7 @@
             <%= f.label :password_confirmation, "Confirmation" %>
             <%= f.password_field :password_confirmation, class: "form-control" %>
           </div>
-            <%= f.submit t(".btn_create_acc"), class: "btn btn-primary" %>
+            <%= f.submit t(".btn_create_acc"), class: "btn btn-accent btn-lg btn-block" %>
         <% end %>
     </div>
   </div>

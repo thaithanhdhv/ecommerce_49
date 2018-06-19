@@ -14,6 +14,11 @@ img {
   height: auto;
 }
 
+input.form-control:focus {
+  box-shadow: none !important;
+  border-color: $accent_color;
+}
+
 a {
   outline: none;
   text-decoration: none;
@@ -103,4 +108,8 @@ input, textarea, button, select {
 ::selection {
   background-color: $accent_color;
   color: $foreground_accent_color;
+}
+
+.primary-content {
+  padding-top: 50px;
 }
