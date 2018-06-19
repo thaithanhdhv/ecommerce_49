@@ -31,3 +31,7 @@
 
 en:
   hello: "Hello world"
+  logout: "Logout"
+  add_to_card: "Add to card"
+  account: "Account"
+  settings: "Settings"

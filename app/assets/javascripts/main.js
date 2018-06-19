@@ -6,6 +6,7 @@
   Shop.header = {
     init: function() {
       this.header_scoll();
+      this.input_quantity();
     },
     header_scoll: function() {
       var didScroll;
@@ -46,6 +47,26 @@
         }
         lastScrollTop = st;
       }
+    },
+    input_quantity: function(){
+      $('.btn-number').on('click', function() {
+
+      var $button = $(this);
+      var oldValue = $button.parent().find('input').val();
+
+      if ($button.hasClass('fa-plus')) {
+        var newVal = parseFloat(oldValue) + 1;
+      } else {
+        if (oldValue > 0) {
+          var newVal = parseFloat(oldValue) - 1;
+        } else {
+          newVal = 0;
+        }
+      }
+
+  $button.parent().find('input').val(newVal);
+
+});
     }
   };
   $(document).ready(function() {
