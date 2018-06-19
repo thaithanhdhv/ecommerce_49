@@ -25,6 +25,7 @@ a:focus {
   outline: none;
   color: $accent_color;
   transition: 0.3s;
+  text-decoration: none;
 }
 button,
 .btn,
@@ -38,7 +39,7 @@ input[type="submit"] {
   color: $foreground_accent_color;
   transition: 0.3s;
   text-transform: uppercase;
-  padding: 15px 35px;
+  padding: 10px 35px;
   &:hover,
   &:focus{
     background-color: transparent;

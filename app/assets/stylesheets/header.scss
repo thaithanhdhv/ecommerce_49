@@ -31,20 +31,44 @@ header {
   ul.navbar-nav {
     flex-direction: row;
     .dropdown-menu{
+      border-radius: 0;
       position: absolute;
+       display: block;
       border: none;
       z-index: 99;
+      transition: 0.5s;
+      opacity: 0;
+      box-shadow: 0 9px 24px rgba(0, 0, 0, 0.15);
       li {
-        margin-left: 0;
-        a{
+        margin-left: 20px;
+        a {
           text-transform: capitalize;
+          font-weight: normal;
+          letter-spacing: 0;
+          &:before {
+            content: none;
+          }
+        }
+        + li {
+          padding-top: 10px;
         }
       }
     }
+    .dropdown.x-menu {
+        position:relative;
+        &:hover,
+        &:focus {
+          ul.dropdown-menu {
+            top: 80px;
+            opacity: 1;
+          }
+        }
+      }
     li + li {
       margin-left: 30px;
     }
-    li {
+    > li {
+      padding:30px 0;
       a {
         position: relative;
         &:before{
@@ -57,8 +81,16 @@ header {
           left: 0;
           background-color: $accent_color;
         }
+        i{
+          font-size: 14px;
+          margin-left: 5px;
+          transition: 0.3s;
+        }
         &:hover,
         &:focus{
+          i{
+            color: $accent_color;
+          }
           &:before {
             width: 100%;
           }
@@ -89,5 +121,16 @@ footer {
         color: $accent_color;
       }
     }
+  }
+}
+.page-title {
+  position: relative;
+  .title {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    font-size: 42px;
+    color: $dark_color;
+    font-weight: 600;
   }
 }

@@ -5,19 +5,20 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem "rails", "~> 5.1.6"
+gem "bcrypt", "~> 3.1.7"
+gem "bootstrap", "~> 4.1.1"
+gem "bootstrap-will_paginate", "1.0.0"
+gem "font-awesome-rails"
+gem "i18n-js"
+gem "jquery-rails"
 gem "mysql2", ">= 0.3.18", "< 0.6.0"
 gem "puma", "~> 3.7"
+gem "rails", "~> 5.1.6"
+gem "rubocop", "~> 0.49.1", require: false
 gem "sass-rails", "~> 5.0"
-gem "bootstrap", "~> 4.1.1"
-gem "jquery-rails"
+gem "turbolinks"
 gem "uglifier", ">= 1.3.0"
 gem "will_paginate", "3.1.6"
-gem "turbolinks"
-gem "bootstrap-will_paginate", "1.0.0"
-gem "bcrypt", "~> 3.1.7"
-gem "rubocop", "~> 0.49.1", require: false
-gem "i18n-js"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

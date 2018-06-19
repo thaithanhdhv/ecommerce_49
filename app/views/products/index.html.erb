@@ -1,10 +1,15 @@
+<div class="page-title">
+  <%= image_tag("page-title-01.jpg", class: "page-title-img") %>
+  <h3 class="title">Shop</h3>
+</div>
+<div class="container">
   <div class="row">
     <div class="products-wrap d-flex">
       <article class="product-item-wrap col-md-4 col-sm-6">
         <div class="product-item-inner">
           <div class="product-thumb">
             <a href="#">
-              <%= image_tag("product-53.jpg", class: "product-image") %>
+            <%= image_tag("product-53.jpg", class: "product-image") %>
             </a>
           </div>
           <div class="product-info">
@@ -12,7 +17,7 @@
             <span class="price">$39.99</span>
           </div>
           <div class="product-action">
-            <a class="btn-accent" href="#">Add to card</a>
+            <%= link_to t("add_to_card"), "#", class: "btn-accent" %>
           </div>
         </div>
       </article>
@@ -20,7 +25,7 @@
         <div class="product-item-inner">
           <div class="product-thumb">
             <a href="#">
-              <%= image_tag("product-53.jpg", class: "product-image") %>
+            <%= image_tag("product-53.jpg", class: "product-image") %>
             </a>
           </div>
           <div class="product-info">
@@ -28,7 +33,7 @@
             <span class="price">$39.99</span>
           </div>
           <div class="product-action">
-            <a class="btn-accent" href="#">Add to card</a>
+            <%= link_to t("add_to_card"), "#", class: "btn-accent" %>
           </div>
         </div>
       </article>
@@ -36,7 +41,7 @@
         <div class="product-item-inner">
           <div class="product-thumb">
             <a href="#">
-              <%= image_tag("product-53.jpg", class: "product-image") %>
+            <%= image_tag("product-53.jpg", class: "product-image") %>
             </a>
           </div>
           <div class="product-info">
@@ -44,9 +49,10 @@
             <span class="price">$39.99</span>
           </div>
           <div class="product-action">
-            <a class="btn-accent" href="#">Add to card</a>
+            <%= link_to t("add_to_card"), "#", class: "btn-accent" %>
           </div>
         </div>
       </article>
     </div>
   </div>
+</div>
