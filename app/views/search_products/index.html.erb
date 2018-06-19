@@ -1,0 +1,10 @@
+<%= provide :page_title, t("search_holder") %>
+<h5><%= @products.size %></h5>
+<ul class="products">
+  <% @products.each do |product| %>
+    <li>
+      <span><%= product.title %></span>
+      <span><%= product.price %></span>
+    </li>
+  <% end %>
+</ul>

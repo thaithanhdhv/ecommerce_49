@@ -3,7 +3,9 @@
     <span><%= user.name %></span>
     <span><%= user.email %></span>
     <span><%= user.phone %></span>
-    <%= link_to t("users.index.delete"), user, class: "btn btn-small btn-danger", method: :delete, data: {confirm: t("users.index.comfirm")} %>
+    <%= link_to t("users.index.delete"), user,
+      class: "btn btn-small btn-danger", method: :delete,
+      data: {confirm: t("users.index.comfirm")} %>
     <%= link_to t(".update"), admin_user_path(user), class: "btn btn-small btn-info" %>
   </li>
 <% end %>

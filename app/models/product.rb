@@ -4,4 +4,6 @@ class Product < ApplicationRecord
   has_many :orders, through: :order_details
   has_many :ratings
   has_many :comments
+
+  scope :starts_with, ->(name){where "title like ?", "#{name}%"}
 end
