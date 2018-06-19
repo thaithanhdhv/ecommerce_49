@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
-  layout "fullwidth"
+  layout "statics_page"
+
   def home; end
 end

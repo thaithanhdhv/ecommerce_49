@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <h1 class="text-center"><%= t ".title" %></h1>
+        <%= form_for @user do |f| %>
+          <%= render "shared/error_messages", object: f.object %>
+          <div class="form-group">
+            <%= f.label :name, t(".label_name") %>
+            <%= f.text_field :name, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :email, t(".label_email") %>
+            <%= f.email_field :email, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password, t(".label_password") %>
+            <%= f.password_field :password, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password_confirmation, t("users.new.label_password_confirm") %>
+            <%= f.password_field :password_confirmation, class: "form-control" %>
+          </div>
+            <%= f.submit t(".btn_create_acc"), class: "btn btn-accent btn-lg btn-block" %>
+        <% end %>
+    </div>
+  </div>
+</div>

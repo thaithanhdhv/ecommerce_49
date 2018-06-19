@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= t "title" %></title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+</head>
+<body>
+  <%= render "layouts/admin_header" %>
+  <div class="primary-content-admin">
+    <div class="container-fluid d-flex">
+      <div class="col-md-3">
+        <%= render "layouts/admin_menu" %>
+      </div>
+      <div class="col-md-9">
+        <%= render "layouts/notification" %>
+        <%= yield %>
+      </div>
+      </div>
+    </div>
+  </div>
+</body>
