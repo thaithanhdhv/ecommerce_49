@@ -1,37 +1,59 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
   logout: "Logout"
   add_to_card: "Add to card"
   account: "Account"
   settings: "Settings"
+  update: "Update"
+  sub_title: "Welcome to April"
+  title: "April"
+  users:
+    index:
+      title: "All users"
+      delete: "Delete"
+      comfirm: "You sure?"
+      destroy: "User Deleted"
+    new:
+      title: "Sign up"
+      header: "Sign up"
+      form_err_msg1: "The form contains "
+      form_err_msg2: "error"
+      label_name: "Name"
+      label_address: "Address"
+      label_phone: "Phone"
+      label_email: "Email"
+      label_password: "Password"
+      label_password_confirm: "Confirmation"
+      btn_create_acc: "Create my account"
+    edit:
+      Update2: "Update your profile"
+      updated: "Profile updated"
+      title: "Edit user"
+      header: "Upadte your profile"
+      label_name: "Name"
+      label_email: "Email"
+      label_password: "Password"
+      label_password_confirm: "Confirmation"
+      btn_update_acc: "Save changes"
+      link_change_gravatar: "Change"
+    destroy:
+      user_deleted_msg: "User deleted"
+      user_delete_err_msg: "Are you trying to delete the void?"
+  categories:
+    destroy:
+      category_deleted_msg: "Category deleted"
+      category_delete_err_msg: "Are you trying to delete the void?"
+  sessions:
+    new:
+      title: "Log in"
+      header: "Log in"
+      submit_btn: "Log in"
+      content1: "New user? "
+      link1: "Sign up now!"
+      label_email: "Email"
+      label_password: "Password"
+      remember_content: "Remember me on this computer"
+    fail: "Invalid email/password combination"
+  user_mailer:
+    check_alert: "Please check your email to activate your account."
+    updated: "Profile updated"

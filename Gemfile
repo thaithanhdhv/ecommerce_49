@@ -18,6 +18,8 @@ gem "rubocop", "~> 0.49.1", require: false
 gem "sass-rails", "~> 5.0"
 gem "turbolinks"
 gem "uglifier", ">= 1.3.0"
+gem "turbolinks"
+gem "config"
 gem "will_paginate", "3.1.6"
 
 group :development, :test do

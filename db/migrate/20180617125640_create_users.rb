@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :phone
       t.string :address
       t.string :remeber_token
-      t.integer :role
+      t.integer :role, null: false, default: 0
       t.boolean :active
 
       t.timestamps
