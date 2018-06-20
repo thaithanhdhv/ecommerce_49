@@ -5,17 +5,10 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   </head>
   <body>
     <%= render "layouts/header" %>
-    <%= render "layouts/page-title" %>
-    <div class="primary-content">
-      <div class="container">
-        <%= render "layouts/notification" %>
-        <%= yield %>
-      </div>
-    </div>
+    <%= yield %>
     <%= render "layouts/footer" %>
   </body>
 </html>
