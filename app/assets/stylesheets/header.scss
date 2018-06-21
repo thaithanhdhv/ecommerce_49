@@ -10,6 +10,11 @@ header {
     transform: none;
     background-color: $foreground_accent_color;
     box-shadow: 0 3px 7px -3px $color_shadow;
+    ul.navbar-nav li.search-form {
+      input {
+        border-color: $dark_color;
+      }
+    }
   }
   transition: all 0.5s;
   background-color: transparent;
@@ -30,6 +35,29 @@ header {
   }
   ul.navbar-nav {
     flex-direction: row;
+    align-items: center;
+    li.search-form {
+          form {
+            position: relative;
+          }
+          input {
+            border-color: transparent;
+            border-radius: 20px;
+           }
+          .submit-btn {
+            position: absolute;
+            right: 8px;
+            background-color: transparent;
+            border: none;
+            top: -3px;
+            font-size: 14px;
+            &:hover,
+            &:focus {
+              cursor: pointer;
+              color: $accent_color;
+            }
+          }
+      }
     .dropdown-menu{
       border-radius: 0;
       position: absolute;

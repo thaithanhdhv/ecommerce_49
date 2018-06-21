@@ -9,6 +9,8 @@ en:
   update: "Update"
   sub_title: "Welcome to April"
   title: "April"
+  search_holder: "Search Products"
+  search_empty: "Product not found, please try asgain !"
   users:
     index:
       title: "All users"
@@ -52,3 +54,5 @@ en:
   user_mailer:
     check_alert: "Please check your email to activate your account."
     updated: "Profile updated"
+  admin:
+    add_user: "Add new user"

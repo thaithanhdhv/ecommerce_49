@@ -21,6 +21,9 @@
         <% else %>
           <li><%= link_to t("sessions.new.title"), login_path %></li>
         <% end %>
+        <li class="search-form form-inline">
+          <%= render "layouts/search" %>
+        </li>
         <li class="shopping-cart"><i class="fa fa-shopping-cart"></i></li>
       </ul>
     </div>
