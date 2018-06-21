@@ -8,13 +8,7 @@
   </head>
   <body>
     <%= render "layouts/header" %>
-    <%= render "layouts/page-title" %>
-    <div class="primary-content">
-      <div class="container">
-        <%= render "layouts/notification" %>
-        <%= yield %>
-      </div>
-    </div>
+    <%= yield %>
     <%= render "layouts/footer" %>
   </body>
 </html>
