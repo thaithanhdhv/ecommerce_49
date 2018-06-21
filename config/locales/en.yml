@@ -11,6 +11,15 @@ en:
   title: "April"
   search_holder: "Search Products"
   search_empty: "Product not found, please try asgain !"
+  update: "Update"
+  name: "Name:"
+  tilte_cate: "Category"
+  sub_title: "Welcome to April"
+  edit_cate: "Edit"
+  destroy_cate: "Destroy"
+  are_you: "Are you sure?"
+  new_cate: "New Category"
+  create_btn: "Create"
   users:
     index:
       title: "All users"
@@ -42,6 +51,9 @@ en:
     destroy:
       category_deleted_msg: "Category deleted"
       category_delete_err_msg: "Are you trying to delete the void?"
+    load_user:
+      user_nil: "Account not found"
+      cate_nil: "Caterory not found"
   sessions:
     new:
       title: "Log in"
@@ -56,3 +68,5 @@ en:
     updated: "Profile updated"
   admin:
     add_user: "Add new user"
+    create_cate: "Caterory was successfully created."
+    update_cate: "Caterory was successfully update."
