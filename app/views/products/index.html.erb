@@ -1,43 +1,5 @@
-<div class="page-title">
-  <%= image_tag("page-title-01.jpg", class: "page-title-img") %>
-  <h3 class="title"><%= t "title" %></h3>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="products-wrap d-flex">
-      <article class="product-item-wrap col-md-4 col-sm-6">
-        <div class="product-item-inner">
-          <div class="product-thumb">
-            <a href="#">
-            <%= image_tag("product-53.jpg", class: "product-image") %>
-            </a>
-          </div>
-          <div class="product-info">
-            <h4 class="product-title">Black Tees</h4>
-            <span class="price">$39.99</span>
-          </div>
-          <div class="product-action">
-            <%= link_to t("add_to_card"), "#", class: "btn-accent" %>
-            <a class="btn-accent" href="#"><%= t "add_to_cart" %></a>
-          </div>
-        </div>
-      </article>
-      <article class="product-item-wrap col-md-4 col-sm-6">
-        <div class="product-item-inner">
-          <div class="product-thumb">
-            <a href="#">
-            <%= image_tag("product-53.jpg", class: "product-image") %>
-            </a>
-          </div>
-          <div class="product-info">
-            <h4 class="product-title">Black Tees</h4>
-            <span class="price">$39.99</span>
-          </div>
-          <div class="product-action">
-            <%= link_to t("add_to_card"), "#", class: "btn-accent" %>
-          </div>
-        </div>
-      </article>
-    </div>
+<div class="row">
+  <div class="products-wrap d-flex">
+    <%= render partial: "product_row", collection: @products, locals: {order_detail: @order_detail}, as: :product %>
   </div>
 </div>
