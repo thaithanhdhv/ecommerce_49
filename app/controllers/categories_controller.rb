@@ -4,7 +4,6 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.includes(:subcategories)
       .order_name.paginate page: params[:page], per_page: Settings.cate_per_page
-
   end
 
   def show; end
@@ -55,5 +54,4 @@ class CategoriesController < ApplicationController
     flash[:warning] = t ".cate_nil"
     redirect_to root_path
   end
-
 end

@@ -9,15 +9,14 @@
       <div class="form-group">
         <%= f.password_field :password, class: "form-control", placeholder: t(".label_password") %>
       </div>
+
       <%= f.label :remember_me, class: "checkbox inline" do %>
         <%= f.check_box :remember_me, class: "check-box" %>
         <span><%= t ".remember_content" %></span>
       <% end %>
-
       <%= f.submit t(".title"), class: "btn btn-accent btn-lg btn-block" %>
     <% end %>
 
     <p class="sign-up"><%= t ".content1" %><%= link_to t(".signup"), signup_path %></p>
   </div>
 </div>
-
