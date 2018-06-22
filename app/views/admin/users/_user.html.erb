@@ -1,11 +1,19 @@
- <% if user.member? %>
-  <li>
-    <span><%= user.name %></span>
-    <span><%= user.email %></span>
-    <span><%= user.phone %></span>
-    <%= link_to t("users.index.delete"), user,
-      class: "btn btn-small btn-danger", method: :delete,
-      data: {confirm: t("users.index.comfirm")} %>
-    <%= link_to t(".update"), admin_user_path(user), class: "btn btn-small btn-info" %>
-  </li>
-<% end %>
+<tr>
+  <td><%= user.name %></td>
+  <td><%= user.email %></td>
+  <td><%= user.address %></td>
+  <td><%= user.phone %></td>
+  <td>
+    <% if user.active %>
+      <span class="status text-success"><%= t ".active" %></span>
+    <% else %>
+      <span class="status text-danger"><%= t ".inactive" %></span>
+    <% end %>
+  </td>
+  <td align="center">
+    <%= link_to user, method: :delete,
+      remote: true, data:{confirm: t(".sure")} do %>
+      <i class="fa fa-trash-o" aria-hidden="true"></i>
+    <% end %>
+  </td>
+</tr>

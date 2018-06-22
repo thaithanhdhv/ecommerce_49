@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :loads_category, except: %i(index create new)
+  before_action :load_category, only: %i(index show)
 
   def index
     @categories = Category.includes(:subcategories)
@@ -8,47 +8,9 @@ class CategoriesController < ApplicationController
 
   def show; end
 
-  def new
-    @category = Category.new
-  end
-
-  def edit; end
-
-  def create
-    @category = Category.new category_params
-    if @category.save
-      flash[:info] = t "user_mailer.create_cate"
-      redirect_to @category
-    else
-      render :new
-    end
-  end
-
-  def update
-    if @category.update_attributes category_params
-      flash[:success] = t "user_mailer.update_cate"
-      redirect_to @category
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    if @category.destroy
-      flash[:success] = t ".category_deleted_msg"
-    else
-      flash[:danger] = t ".category_delete_err_msg"
-    end
-    redirect_to categories_path
-  end
-
   private
 
-  def category_params
-    params.require(:category).permit :name, :parent_id
-  end
-
-  def loads_category
+  def load_category
     @category = Category.find_by id: params[:id]
     return if @category
     flash[:warning] = t ".cate_nil"

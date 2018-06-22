@@ -3,7 +3,7 @@ module Admin
     before_action :load_user, only: %i(update destroy show)
 
     def index
-      @users = User.order_user.paginate page: params[:page], per_page: Settings.user_per_page
+      @users = User.newest.paginate page: params[:page], per_page: Settings.user_per_page
     end
 
     def new

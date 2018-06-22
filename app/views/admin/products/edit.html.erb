@@ -1,0 +1,54 @@
+<% provide :title,  t(".page_title") %>
+
+<div class="panel panel-default panel-table">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col col-xs-6">
+        <h3 class="panel-title"><%= t ".panel_title" %></h3>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body ">
+    <div class="row">
+      <div class="col-md-8">
+        <%= form_for [:admin, @product], html: {multipart: true} do |f| %>
+          <div class="form-group">
+            <%= f.label :title, t(".label_title") %>
+            <%= f.text_field :title, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :price, t(".label_price") %>
+            <%= f.number_field :price, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :quantity, t(".label_quantity") %>
+            <%= f.number_field :quantity, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :description, t(".label_description") %>
+            <%= f.text_area :description, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :image, t(".label_image") %>
+            <%= f.file_field :image, class: "form-control"  %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :category_id %>
+            <%= f.collection_select :category_id, Category.order(:name), :id, :name,
+              {prompt: true}, {class: "form-control"} %>
+          </div>
+
+          <%= f.submit t(".button"), class: "btn btn-primary" %>
+        <% end %>
+      </div>
+      <div class="col-md-4">
+        <%= render "admin/shared/error_messages", object: @product %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -4,7 +4,7 @@
     <%= link_to t("edit_cate"), edit_category_path(category) %>
     <%= link_to t("destroy_cate"), category, method: :delete, data: { confirm: t("are_you") } %>
   </li>
-  <% if category.parent_id.blank? %>
+  <% if category.parent_category.blank? %>
     <ul>
       <% if category.subcategories.any? %>
         <%= render partial: "subcategory", collection: @subcategories, as: :subcategory %>
