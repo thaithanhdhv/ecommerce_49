@@ -17,6 +17,7 @@ gem "rails", "~> 5.1.6"
 gem "rubocop", "~> 0.49.1", require: false
 gem "sass-rails", "~> 5.0"
 gem "turbolinks"
+gem "font-awesome-rails"
 gem "uglifier", ">= 1.3.0"
 gem "turbolinks"
 gem "carrierwave", "1.2.2"

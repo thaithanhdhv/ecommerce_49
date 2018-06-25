@@ -1,4 +1,4 @@
-class CreateUsers < ActiveRecord::Migration[5.1]
+    class CreateUsers < ActiveRecord::Migration[5.1]
   def change
     create_table :users do |t|
       t.string :name, null: false
@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :address
       t.string :remeber_token
       t.integer :role, null: false, default: 0
-      t.boolean :active
+      t.boolean :active, default: false
 
       t.timestamps
     end
