@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     resources :order_details, only: :index
   end
   namespace :admin do
-    root "users#index"
+    root "static_pages#home"
     resources :users
     resources :categories do
       resources :products

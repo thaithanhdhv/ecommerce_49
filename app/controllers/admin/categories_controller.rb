@@ -28,8 +28,8 @@ module Admin
 
     def update
       if @category.update_attributes category_params
-        flash[:success] = t "update_cate"
-        redirect_to @category
+        flash[:success] = t "sucess_msg"
+        redirect_to admin_categories_path
       else
         render :new
       end
@@ -57,9 +57,9 @@ module Admin
     end
 
     def check_parent
-      return unless @category.name = category_params[:parent_category]
-      redirect_to edit_admin_category_path @category
+      return unless @category.id == params[:category][:parent_category].to_i
       flash[:danger] = t "error_message"
+      redirect_to edit_admin_category_path @category
     end
   end
 end

@@ -51,7 +51,9 @@ en:
   product_image: "Image"
   title: "April"
   search_holder: "Search Products"
-  search_empty: "Product not found, please try asgain !"
+  search_text1: "Found"
+  search_text2: "products match"
+  search_empty: "Product not found, please try again!"
   update: "Update"
   name: "Name"
   success_msg: "send mail"
@@ -109,9 +111,7 @@ en:
       back: "Back"
       continue_shopping: "Continue Shopping"
       cancle_order: "Cancle Order"
-      currency: "$ %{price}"
     order_item:
-      currency: "$ %{price}"
   sucess_msg: "Successfully!"
   users:
     role: "Role"
@@ -227,6 +227,9 @@ en:
       alert_success: "The product has been added to cart."
       alert_fail: "Error occurs!"
   admin:
+    static_pages:
+      home:
+        login_required: "Please log in!"
     users:
       index:
         page_title: "Users"
@@ -287,8 +290,6 @@ en:
     menu_link4: "Rejected Orders"
     accept: "Approve"
     reject: "Reject"
-    accept: "Accept"
-    reject: "reject"
     view_link: "View Details"
   sort_name_asc: "Name A-Z"
   sort_name_desc: "Name Z-A"
@@ -296,3 +297,5 @@ en:
   sort_price: "Price range"
   submit_btn: "Submit"
   login_notice: "Logged in."
+  report_activity: "Report Activity"
+  order_report: "Order Report"
