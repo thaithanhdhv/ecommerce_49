@@ -1,12 +1,16 @@
 class ProductsController < ApplicationController
   before_action :load_product, only: :show
+  before_action :load_products, only: :filter_product
 
   def index
     @products = Product.order_price
       .paginate page: params[:page], per_page: Settings.product_per_page
+    @categories =  Category.all
   end
 
   def show; end
+
+  def filter_product; end
 
   private
 
@@ -15,5 +19,16 @@ class ProductsController < ApplicationController
     return if @product
     flash[:warning] = t ".oproduct_nil"
     redirect_to root_path
+  end
+
+  def load_products
+    case
+    when params[:cat_id]
+      @products = Product.by_category params[:cat_id]
+    when params[:sort_by]
+      @products  = Product.order_name params[:sort_by].to_sym
+    else params[:price_min][:value] && params[:price_max][:value]
+      @products  = Product.min_max_price params[:price_min][:value], params[:price_max][:value]
+    end
   end
 end

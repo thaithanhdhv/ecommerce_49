@@ -7,6 +7,7 @@
     init: function() {
       this.header_scoll();
       this.input_quantity();
+      this.ranger_price();
     },
     header_scoll: function() {
       var didScroll;
@@ -66,6 +67,24 @@
 
         $button.parent().find('input').val(newVal);
       });
+    },
+    ranger_price: function() {
+      $( '#the_slider' ).slider({
+        range: true,
+        min: 0,
+        max: 50,
+        values: [0, 50],
+        slide: function( event, ui ) {
+          $( '#amount' ).val( '$' + ui.values[0] + ' - $' + ui.values[1] );
+          $('#price_min_value').val(ui.values[0]);
+          $('#price_max_value').val(ui.values[1]);
+        }
+      });
+      $('#amount').val('$' + $('#the_slider').slider('values', 0) +
+        ' - $' + $('#the_slider').slider('values', 1));
+
+      $('#price_min_value').val($('#the_slider').slider('values')[0]);
+      $('#price_max_value').val($('#the_slider').slider('values')[1]);
     }
   };
   $(document).ready(function() {
