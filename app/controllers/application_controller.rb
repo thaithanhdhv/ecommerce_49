@@ -16,11 +16,10 @@ class ApplicationController < ActionController::Base
   private
 
   def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:danger] = t ".login_required"
-      redirect_to login_path
-    end
+    return if logged_in?
+    store_location
+    flash[:danger] = t ".login_required"
+    redirect_to login_path
   end
 
   def admin_layout

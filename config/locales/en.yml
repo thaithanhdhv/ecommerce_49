@@ -6,10 +6,8 @@ en:
   account: "Account"
   profile: "Profile"
   home: "Home"
-  parent_category: "Parent_category"
+  parent_category: "Parent Category"
   category: "Category"
-  currency:
-    format: "$ %{price}"
   shared:
     error_messages:
       contains_error: "The form contain"
@@ -35,29 +33,6 @@ en:
   image_size: "should be less than 5MB"
   sub_title: "Welcome to April"
   error_message: "Somethings wrong, please try again"
-  carts:
-    cart_item:
-      currency: "$%{price}"
-      image_alt: "Edit Entry"
-    index:
-      currency: "$%{price}"
-      cart: "Cart"
-      product: "Product"
-      price: "Price"
-      quantity: "Quantity"
-      subtotal: "Subtotal"
-      total: "Total: "
-      continue_shopping: "Continue Shopping"
-      checkout: "Checkout"
-      login_required: "You must login to be continue."
-    update_hard_cart:
-      validate_quantity_fail: "Not enough quantity."
-      validate_quantity_is_zero: "So luong khong duoc la 0"
-    remove_cart:
-      error: "Error occurs!"
-    add_cart:
-      alert_success: "The product has been added to cart."
-      alert_fail: "Error occurs!"
   order_items:
     index:
       invoice: "Invoice"
@@ -85,6 +60,7 @@ en:
       currency: "$ %{price}"
   sucess_msg: "Successfully!"
   users:
+    role: "Role"
     index:
       title: "All users"
       delete: "Delete"
@@ -102,16 +78,10 @@ en:
       label_password_confirm: "Confirmation"
       btn_create_acc: "Create my account"
     edit:
-      updated: "Profile updated"
       title: "Edit user"
-      header: "Upadte your profile"
       Update2: "Update your profile"
       updated: "Profile updated"
-      title: "Edit user"
-      header: "Upadte your profile"
-      label_name: "Name"
-      label_email: "Email"
-      label_password: "Password"
+      header: "Update your profile"
       label_password_confirm: "Confirmation"
       btn_update_acc: "Save changes"
       link_change_gravatar: "Change"
@@ -153,6 +123,7 @@ en:
   products:
     all_product: "All products"
     add_new: "Add product"
+    desc: "Product Description"
     index:
       title: "All users"
       delete: "Delete"
@@ -160,16 +131,8 @@ en:
       destroy: "User Deleted"
     new:
       title: "Sign up"
-      header: "Sign up"
       form_err_msg1: "The form contains "
       form_err_msg2: "error"
-      label_name: "Name"
-      label_address: "Address"
-      label_phone: "Phone"
-      label_email: "Email"
-      label_password: "Password"
-      label_password_confirm: "Confirmation"
-      btn_create_acc: "Create my account"
     edit:
       Update2: "Update your profile"
       updated: "Profile updated"
@@ -192,6 +155,26 @@ en:
     delete_confirm: "Are you sure to delete this product from your cart?"
     empty_cart: "Your cart is empty, plase go to"
     empty_cart2: "to choose some products"
+    cart_item:
+      image_alt: "Edit Entry"
+    index:
+      cart: "Cart"
+      product: "Product"
+      price: "Price"
+      quantity: "Quantity"
+      subtotal: "Subtotal"
+      total: "Total: "
+      continue_shopping: "Continue Shopping"
+      checkout: "Checkout"
+      login_required: "You must login to be continue."
+    update_hard_cart:
+      validate_quantity_fail: "Not enough quantity."
+      validate_quantity_is_zero: "Quantity must be greater than 0"
+    remove_cart:
+      error: "Error occurs!"
+    add_cart:
+      alert_success: "The product has been added to cart."
+      alert_fail: "Error occurs!"
   admin:
     users:
       index:
@@ -219,60 +202,30 @@ en:
       product:
         sure: "You sure?"
       new:
-        page_title: "Products"
         panel_title: "Edit product"
         button: "Create"
         min_size_image: "should be less than 1MB"
         over_size: "Maximum file size is 1MB. Please choose a smaller file."
-        add_image: "Add image"
         not_empty: "cannot be empty"
-      create:
-        create_fail: "some thing fails!"
-        success: "create success!"
       image_fields:
         remove: "remove img"
       edit:
-        page_title: "Products"
         panel_title: "Add new product"
         button: "Edit"
         add_image: "Add image"
         not_empty: "cannot be empty"
-      update:
-        create_fail: "some thing fails!"
-        success: "Update success!"
     categories:
       index:
         page_title: "Categories"
         panel_title: "Show list Categories"
-        name: "Name"
-        parent_category: "parent_category"
-        status: "Status"
-      category:
-        sure: "You sure?"
-      _form:
-        button: "Create new cate"
       new:
-        page_title: "Categories"
-        panel_title: "Add new cate"
         button: "Create new cate"
       create:
-        fail: "some thing fails!"
-        success: "create success!"
+        success: "Success!"
       edit:
-        page_title: "Categories"
-        panel_title: "Add new cate"
-        button: "Edit cate"
-        find_category: "can't find category"
-      update:
-        fail: "some thing fails!"
-        success: "update success!"
-        find_category: "can't find category"
-      destroy:
-        fail: "some thing fails!"
-        success: "delete success!"
-        find_category: "can't find category"
-      load_category:
-        find_category: "can't find category"
+        panel_title: "Add new category"
+        button: "Edit category"
+        find_category: "Can't find category"
   orders:
     title: "Orders"
     id: "STT"
@@ -281,6 +234,6 @@ en:
     menu_link2: "Processing Orders"
     menu_link3: "Accepted Orders"
     menu_link4: "Rejected Orders"
-    accept: "Accept"
-    reject: "reject"
+    accept: "Approve"
+    reject: "Reject"
     view_link: "View Details"

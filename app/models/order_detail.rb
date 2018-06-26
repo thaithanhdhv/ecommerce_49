@@ -4,7 +4,7 @@ class OrderDetail < ApplicationRecord
 
   delegate :name, to: :product, prefix: :product
 
-  scope :find_by_order_id, ->(order_ids){where order_id: order_ids}
+  scope :by_order_id, ->(order_ids){where order_id: order_ids}
 
   validates :quantity, presence: true, numericality: {only_integer: true, greater_than: Settings.min_size}
   validate :product_present
