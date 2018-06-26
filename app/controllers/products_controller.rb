@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :load_product, only: %i(show)
+  before_action :load_product, only: :show
 
   def index
     @products = Product.order_price.paginate page: params[:page], per_page: Settings.product_per_page

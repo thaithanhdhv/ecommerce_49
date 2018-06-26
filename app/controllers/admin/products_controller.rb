@@ -46,7 +46,7 @@ module Admin
     private
 
     def product_params
-      params.require(:product).permit :title, :price, :description, :quantity, :image, :category_id
+      params.require(:product).permit :name, :price, :description, :quantity, :image, :category_id
     end
 
     def load_product

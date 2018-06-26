@@ -16,12 +16,12 @@
       value="<%= product.quantity_in_cart %>" data-product="<%= product.id %>">
   </td>
   <td data-th="Subtotal" class="text-center subtotal">
-    <%= number_to_currency(product.price * product.quantity_in_cart).to_i %>
+    <%= number_to_currency(product.price * product.quantity_in_cart) %>
   </td>
   <td class="actions" data-th="" class="unit_price">
     <%= link_to remove_cart_path(product), id: "destroy-product",
       "data-href": remove_cart_path(product), class: "btn btn-danger btn-sm" do %>
-      <i class="fa fa-trash"></i>
+        <i class="fa fa-trash"></i>
     <% end %>
   </td>
 </tr>
