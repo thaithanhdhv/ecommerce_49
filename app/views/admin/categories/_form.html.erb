@@ -6,7 +6,7 @@
 
   <div class="form-group">
     <%= f.label :parent_category %>
-    <%= f.collection_select :parent_category, Category.order(:name), :id, :name,
+    <%= f.collection_select :parent_category, Category.order_name, :id, :name,
       {prompt: true}, {class: "form-control"} %>
   </div>
 
