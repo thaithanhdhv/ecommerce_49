@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :oder_details, only: %i(create update destroy)
   namespace :admin do
     root "users#index"
-    resources :users, except: %i(show)
+    resources :users
     resources :categories do
       resources :products
     end
