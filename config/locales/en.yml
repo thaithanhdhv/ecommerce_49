@@ -26,8 +26,7 @@ en:
   search_holder: "Search Products"
   search_empty: "Product not found, please try asgain !"
   update: "Update"
-  name: "Name:"
-  tilte_cate: "Category"
+  name: "Name"
   edit_cate: "Edit"
   destroy_cate: "Destroy"
   are_you: "Are you sure?"
@@ -84,6 +83,7 @@ en:
       currency: "$ %{price}"
     order_item:
       currency: "$ %{price}"
+  sucess_msg: "Successfully!"
   users:
     index:
       title: "All users"
@@ -239,7 +239,7 @@ en:
         not_empty: "cannot be empty"
       update:
         create_fail: "some thing fails!"
-        success: "update success!"
+        success: "Update success!"
     categories:
       index:
         page_title: "Categories"
@@ -273,3 +273,14 @@ en:
         find_category: "can't find category"
       load_category:
         find_category: "can't find category"
+  orders:
+    title: "Orders"
+    id: "STT"
+    status: "Status"
+    menu_link1: "All Orders"
+    menu_link2: "Processing Orders"
+    menu_link3: "Accepted Orders"
+    menu_link4: "Rejected Orders"
+    accept: "Accept"
+    reject: "reject"
+    view_link: "View Details"

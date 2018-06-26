@@ -41,4 +41,23 @@
       </ul>
     </div>
   </li>
+  <li>
+    <h4 class="sub-menu">
+      <a data-toggle="collapse" href="#order">
+        <%= t "orders.title" %>
+        <i class="fa fa-angle-down"></i>
+      </a>
+    </h4>
+    <div class="collapse" id="order">
+      <ul class="closed">
+        <li><%= link_to t("orders.menu_link1"), admin_orders_path %></li>
+        <li><%= link_to t("orders.menu_link2"),
+          admin_orders_path(status: Order.statuses[:in_progress]) %></li>
+        <li><%= link_to t("orders.menu_link3"),
+          admin_orders_path(status: Order.statuses[:approved]) %></li>
+        <li><%= link_to t("orders.menu_link4"),
+          admin_orders_path(status: Order.statuses[:rejected]) %></li>
+      </ul>
+    </div>
+  </li>
 </ul>
