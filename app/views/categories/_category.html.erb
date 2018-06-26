@@ -1,14 +1,19 @@
 <ul>
-  <li><%= category.name %></li>
-  <li>
-    <%= link_to t("edit_cate"), edit_category_path(category) %>
-    <%= link_to t("destroy_cate"), category, method: :delete, data: { confirm: t("are_you") } %>
-  </li>
-  <% if category.parent_category.blank? %>
-    <ul>
-      <% if category.subcategories.any? %>
-        <%= render partial: "subcategory", collection: @subcategories, as: :subcategory %>
-      <% end %>
-    </ul>
+  <% if category.subcategories.present? %>
+    <li>
+      <h4 class="sub-menu">
+        <a data-toggle="collapse" href="#cate-<%= category.id %>">
+          <%= category.name %>
+          <i class="fa fa-angle-down"></i>
+        </a>
+      </h4>
+      <div class="collapse" id="cate-<%= category.id %>">
+      <ul class="closed">
+        <%= render partial: "categories/subcategory", collection: category.subcategories, as: :subcategory %>
+      </ul>
+      </div>
+    </li>
+  <% elsif category.parent_category.blank? %>
+    <li><%= link_to category.name, fetch_items_path(cat_id: category.id), remote: true %></li>
   <% end %>
 </ul>

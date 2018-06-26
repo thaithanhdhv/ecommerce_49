@@ -7,7 +7,9 @@
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
   </head>
   <body>
-    <%= render "layouts/header" %>
+    <header id="header" class="navbar navbar-expand-lg navbar-light">
+      <%= render "layouts/header" %>
+    </header>
     <%= yield %>
     <%= render "layouts/footer" %>
   </body>

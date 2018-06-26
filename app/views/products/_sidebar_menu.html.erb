@@ -9,11 +9,7 @@
 
 <div class="widget">
   <h4 class="widget-title"><%= t "category" %></h4>
-  <ul>
-    <% @categories.each do | cat | %>
-      <li><%= link_to cat.name, fetch_items_path(cat_id: cat.id), remote: true %></li>
-    <% end %>
-  </ul>
+  <%= render partial: "categories/category", collection: @categories, as: :category %>
 </div>
 
 <div class="widget">

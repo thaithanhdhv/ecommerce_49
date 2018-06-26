@@ -1,4 +1,3 @@
-<header class="navbar navbar-expand-lg navbar-light">
   <div class="container">
     <%= link_to (image_tag "logo.png"), root_path, class: "logo navbar-brand" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -21,7 +20,7 @@
           </ul>
         </li>
         <% else %>
-          <li><%= link_to t("sessions.new.title"), login_path %></li>
+          <li><%= link_to t("sessions.new.title"), login_path, remote: true %></li>
         <% end %>
         <li class="search-form form-inline">
           <%= render "layouts/search" %>
@@ -30,4 +29,3 @@
       </ul>
     </div>
   </div>
-</header>
