@@ -1,0 +1,28 @@
+<table id="cart" class="table table-hover table-condensed">
+  <thead>
+    <tr>
+      <th class="w-50"><%= t ".product" %></th>
+      <th class="w-10"><%= t ".price" %></th>
+      <th class="w-8"><%= t ".quantity" %></th>
+      <th class="w-22 text-center"><%= t ".subtotal" %></th>
+      <th class="w-10"></th>
+    </tr>
+  </thead>
+  <tbody>
+      <%= render partial: "cart_item", collection: @producs_of_current_cart, as: :product %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>
+        <%= link_to products_path, class: "btn btn-warning" do %>
+          <i class="fa fa-angle-left"></i> <%= t ".continue_shopping" %>
+        <% end %>
+      </td>
+      <td colspan="2" class="hidden-xs"></td>
+      <td class="total_price">
+        <span><%= t ".total" %></span>
+          <%= number_to_currency sum_total_price_of_cart %>
+      </td>
+    </tr>
+  </tfoot>
+</table>

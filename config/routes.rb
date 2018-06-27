@@ -10,11 +10,12 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   resources :users, except: %i(index)
+  resources :items
+  resources :order_details
+  resources :orders
   resources :categories
   resources :search_products, only: :index
   resources :products
-  resource :cart, only: :show
-  resources :oder_details, only: %i(create update destroy)
   namespace :admin do
     root "users#index"
     resources :users
@@ -23,4 +24,8 @@ Rails.application.routes.draw do
     end
     resources :products
   end
+  resources :carts, only: :index
+  get "add_cart/:id_product", to: "carts#add_cart", as: :add_cart
+  get "remove_cart/:id_product", to: "carts#remove_cart", as: :remove_cart
+  put "update_hard_cart", to: "carts#update_hard_cart", as: :update_hard_cart
 end
