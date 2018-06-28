@@ -24,6 +24,9 @@ Rails.application.routes.draw do
       resources :products
     end
     resources :products
+    resources :orders do
+      resources :order_details
+    end
   end
   resources :carts, only: :index
   get "add_cart/:id_product", to: "carts#add_cart", as: :add_cart

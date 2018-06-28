@@ -1,0 +1,17 @@
+<tr id="order-<%= order.id %>">
+  <td><%= create_index_row params[:page], order_counter, Settings.product_per_page %></td>
+  <td><%= order.user_name %></td>
+  <td><%= order.status %></td>
+  <td><%= link_to t("orders.view_link"), admin_order_order_details_path(order.id) %></td>
+  <td>
+    <%= form_for [:admin,order], remote: true do |f| %>
+      <%=  f.hidden_field :status, value: "approved" %>
+      <%= f.submit t("orders.accept"), class: "btn btn-primary" %>
+    <% end %>
+
+    <%= form_for [:admin,order], remote: true do |f| %>
+      <%=  f.hidden_field :status, value: "rejected" %>
+      <%= f.submit t("orders.reject"), class: "btn btn-danger" %>
+    <% end %>
+  </td>
+</tr>
