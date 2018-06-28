@@ -9,13 +9,14 @@ Rails.application.routes.draw do
   get "/profile", to: "admin/users#show"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
-  resources :users, except: %i(index)
-  resources :items
+  resources :users, except: :index
   resources :order_details
   resources :orders
   resources :categories
   resources :search_products, only: :index
-  resources :products
+  resources :products do
+    resources :orders
+  end
   namespace :admin do
     root "users#index"
     resources :users

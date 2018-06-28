@@ -1,1 +1,6 @@
-<%= link_to "#{current_order.oder_details.size}", cart_path, class: "btn btn-link" %>
+<div class="navbar-collapse collapse right" id="basket-overview">
+  <%= link_to carts_path, class: "btn btn-primary navbar-btn" do %>
+    <i class="fa fa-shopping-cart"></i>
+      <%= session[:cart].size unless is_empty_cart? %>
+    <% end %>
+</div>

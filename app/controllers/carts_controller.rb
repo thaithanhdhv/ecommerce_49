@@ -69,10 +69,10 @@ class CartsController < ApplicationController
   end
 
   def update_decrement_product_quantity quantity
-    @product.decrement! quantity: quantity
+    @product.decrement!(:quantity, quantity)
   end
 
   def update_increment_product_quantity quantity
-    @product.increment! quantity: quantity
+    @product.increment!(:quantity, quantity)
   end
 end
