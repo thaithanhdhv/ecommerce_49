@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   resources :search_products, only: :index
   resources :users, except: :index
   resources :categories
-  resources :products
+  resources :products, only: %i(index show) do
+    resources :ratings, only: %i(create)
+  end
   resources :orders do
     resources :order_details, only: :index
   end

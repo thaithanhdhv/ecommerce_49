@@ -43,4 +43,11 @@ class ApplicationController < ActionController::Base
   def load_categories
     @categories = Category.all
   end
+
+  def correct_rating_user
+    @rating = Rating.find_by id: params[:id]
+    unless @rating == (current_user.ratings.find_by id: params[:id])
+      redirect_to root_path
+    end
+  end
 end

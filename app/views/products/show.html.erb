@@ -14,7 +14,7 @@
             <div class="col-sm-7">
               <h3 class="product-title"><%= @product.name %></h3>
               <p class="product-des">
-                <%= @product.description %>
+                <%= @product.price %>
               </p>
               <div class="product-action">
                 <div class="product-quantity">
@@ -40,6 +40,9 @@
             </div>
           </div>
           <div class="single-product-content"></div>
+        </div>
+        <div class="row text-center">
+          <%= render partial: "ratings/rating_form" %>
         </div>
       </div>
     </div>

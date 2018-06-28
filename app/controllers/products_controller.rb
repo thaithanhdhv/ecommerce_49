@@ -6,7 +6,10 @@ class ProductsController < ApplicationController
       .paginate page: params[:page], per_page: Settings.product_per_page
   end
 
-  def show; end
+  def show
+    @rating = current_user.ratings.find_by product_id: @product.id if
+      logged_in? && current_user.rating?(@product)
+  end
 
   private
 
