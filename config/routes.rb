@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   get "products/index"
   get "products/show"
 
@@ -9,13 +8,12 @@ Rails.application.routes.draw do
   get "/profile", to: "admin/users#show"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
-  resources :users, except: :index
-  resources :order_details
-  resources :orders
-  resources :categories
   resources :search_products, only: :index
-  resources :products do
-    resources :orders
+  resources :users, except: :index
+  resources :categories
+  resources :products
+  resources :orders do
+    resources :order_details, only: :index
   end
   namespace :admin do
     root "users#index"

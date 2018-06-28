@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-12">
+    <h3><%= t ".order_history" %></h3>
+    <hr>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+           <th>#</th>
+          <th><%= t ".name" %></th>
+          <th><%= t ".address" %></th>
+          <th><%= t ".phone" %></th>
+          <th><%= t ".date" %></th>
+          <th><%= t ".order_total" %></th>
+          <th><%= t ".action" %></th>
+        </tr>
+      </thead>
+      <tbody id="orders">
+        <%= render @orders %>
+      </tbody>
+    </table>
+    <%= will_paginate @products %>
+  </div>
+</div>
