@@ -1,63 +1,47 @@
-<ul class="main-menu">
-  <li>
-    <h4 class="sub-menu">
-      <a data-toggle="collapse" href="#collapseExample">
-        <%= t "users.index.title" %>
-        <i class="fa fa-angle-down"></i>
-      </a>
-    </h4>
-    <div class="collapse" id="collapseExample">
-      <ul class="closed">
-        <li><%= link_to t("users.index.title"), admin_users_path %></li>
-        <li><%= link_to t("admin.add_user"), new_admin_user_path %></li>
-      </ul>
+<ul class="main-menu navbar-nav navbar-right align-items-center">
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <%= t "users.index.title" %>
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <%= link_to t("users.index.title"), admin_users_path, class: "dropdown-item" %>
+      <%= link_to t("admin.add_user"), new_admin_user_path, class: "dropdown-item" %>
     </div>
   </li>
-  <li>
-    <h4 class="sub-menu">
-      <a data-toggle="collapse" href="#cate">
-        <%= t "category" %>
-        <i class="fa fa-angle-down"></i>
-      </a>
-    </h4>
-    <div class="collapse" id="cate">
-      <ul class="closed">
-        <li><%= link_to t("categories.all_cate"), admin_categories_path %></li>
-        <li><%= link_to t("categories.add_cate"), new_admin_category_path %></li>
-      </ul>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <%= t "category" %>
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <%= link_to t("categories.all_cate"), admin_categories_path, class: "dropdown-item" %>
+      <%= link_to t("categories.add_cate"), new_admin_category_path, class: "dropdown-item" %>
     </div>
   </li>
-  <li>
-    <h4 class="sub-menu">
-      <a data-toggle="collapse" href="#product">
-        <%= t "product" %>
-        <i class="fa fa-angle-down"></i>
-      </a>
-    </h4>
-    <div class="collapse" id="product">
-      <ul class="closed">
-        <li><%= link_to t("products.all_products"), admin_products_path %></li>
-        <li><%= link_to t("products.add_new"), new_admin_product_path %></li>
-      </ul>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <%= t "product" %>
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <%= link_to t("products.all_products"), admin_products_path, class: "dropdown-item" %>
+      <%= link_to t("products.add_new"), new_admin_product_path, class: "dropdown-item" %>
     </div>
   </li>
-  <li>
-    <h4 class="sub-menu">
-      <a data-toggle="collapse" href="#order">
-        <%= t "orders.title" %>
-        <i class="fa fa-angle-down"></i>
-      </a>
-    </h4>
-    <div class="collapse" id="order">
-      <ul class="closed">
-        <li><%= link_to t("orders.menu_link1"), admin_orders_path %></li>
-        <li><%= link_to t("orders.menu_link2"),
-          admin_orders_path(status: Order.statuses[:in_progress]) %></li>
-        <li><%= link_to t("orders.menu_link3"),
-          admin_orders_path(status: Order.statuses[:approved]) %></li>
-        <li><%= link_to t("orders.menu_link4"),
-          admin_orders_path(status: Order.statuses[:rejected]) %></li>
-      </ul>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <%= t "orders.title" %>
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <%= link_to link_to t("orders.menu_link1"), admin_orders_path, class: "dropdown-item" %>
+      <%= link_to t("orders.menu_link2"), admin_orders_path(status: Order.statuses[:in_progress]), class: "dropdown-item" %>
+      <%= link_to t("orders.menu_link3"), admin_orders_path(status: Order.statuses[:approved]), class: "dropdown-item" %>
+      <%= link_to t("orders.menu_link4"), admin_orders_path(status: Order.statuses[:rejected]), class: "dropdown-item" %>
     </div>
+  </li>
+  <li class="nav-item">
+   <%= link_to t("logout"), logout_path, method: :delete %>
   </li>
 </ul>

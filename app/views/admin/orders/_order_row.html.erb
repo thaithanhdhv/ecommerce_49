@@ -3,15 +3,17 @@
   <td><%= order.user_name %></td>
   <td><%= order.status %></td>
   <td><%= link_to t("orders.view_link"), admin_order_order_details_path(order.id) %></td>
-  <td>
-    <%= form_for [:admin,order], remote: true do |f| %>
-      <%=  f.hidden_field :status, value: "approved" %>
-      <%= f.submit t("orders.accept"), class: "btn btn-primary" %>
-    <% end %>
+  <td class="clearfix d-flex">
+    <% if order.in_progress? %>
+      <%= form_for [:admin, order], remote: true do |f| %>
+        <%=  f.hidden_field :status, value: Order.statuses.key(3) %>
+        <%= f.submit t("orders.accept"), class: "btn btn-primary" %>
+      <% end %>
 
-    <%= form_for [:admin,order], remote: true do |f| %>
-      <%=  f.hidden_field :status, value: "rejected" %>
-      <%= f.submit t("orders.reject"), class: "btn btn-danger" %>
+      <%= form_for [:admin, order], remote: true do |f| %>
+        <%=  f.hidden_field :status, value: Order.statuses.key(2) %>
+        <%= f.submit t("orders.reject"), class: "btn btn-danger" %>
+      <% end %>
     <% end %>
   </td>
 </tr>

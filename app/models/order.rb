@@ -3,7 +3,7 @@ class Order < ApplicationRecord
   has_many :order_details
   has_many :products, through: :order_details
 
-  enum status: %i{in_progress cancelled rejected approved}
+  enum status: %i(in_progress cancelled rejected approved)
 
   delegate :name, to: :user, prefix: :user
 

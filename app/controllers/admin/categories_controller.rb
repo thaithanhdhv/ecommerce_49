@@ -1,6 +1,7 @@
 module Admin
   class CategoriesController < ApplicationController
     before_action :load_category, except: %i(index create new)
+    before_action :check_parent, only: :update
 
     def index
       @categories = Category.includes(:subcategories)
@@ -53,6 +54,12 @@ module Admin
       @category = Category.find_by id: params[:id]
       return if @category
       flash[:warning] = t ".cate_nil"
+    end
+
+    def check_parent
+      return unless @category.name = category_params[:parent_category]
+      redirect_to edit_admin_category_path @category
+      flash[:danger] = t "error_message"
     end
   end
 end

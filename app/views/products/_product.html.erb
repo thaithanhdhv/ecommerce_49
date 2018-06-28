@@ -1,9 +1,9 @@
 <article class="product-item-wrap col-md-4 col-sm-6">
   <div class="product-item-inner">
     <div class="product-thumb">
-      <a href="#">
+      <%= link_to product_path(product) do %>
         <%= image_tag "product-53.jpg", class: "product-image" %>
-      </a>
+      <% end %>
     </div>
     <div class="product-info">
       <h4 class="product-title"><%= product.name %></h4>

@@ -13,27 +13,27 @@
     <div class="col-md-8">
     <%= form_for [:admin, @product], html: {multipart: true} do |f| %>
       <div class="form-group">
-        <%= f.label :name, t(".label_title") %>
+        <%= f.label :name, t(".name") %>
         <%= f.text_field :name, class: "form-control" %>
       </div>
 
       <div class="form-group">
-        <%= f.label :price, t(".label_price") %>
+        <%= f.label :price, t("carts.price") %>
         <%= f.number_field :price, class: "form-control" %>
       </div>
 
       <div class="form-group">
-        <%= f.label :quantity, t(".label_quantity") %>
+        <%= f.label :quantity, t("carts.quantity") %>
         <%= f.number_field :quantity, class: "form-control" %>
       </div>
 
       <div class="form-group">
-        <%= f.label :description, t(".label_description") %>
+        <%= f.label :description, t("products.desc") %>
         <%= f.text_area :description, class: "form-control" %>
       </div>
 
       <div class="form-group">
-        <%= f.label :image, t(".label_image") %>
+        <%= f.label :image, t("products.edit.add_image") %>
         <%= f.file_field :image, class: "form-control"  %>
       </div>
 
