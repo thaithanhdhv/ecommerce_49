@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20180626102659) do
 
   create_table "order_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "quantity"
-    t.decimal "price", precision: 10
+    t.decimal "unit_price", precision: 10
     t.bigint "product_id"
     t.bigint "order_id"
     t.datetime "created_at", null: false

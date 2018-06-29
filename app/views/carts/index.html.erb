@@ -23,6 +23,13 @@
         <span><%= t ".total" %></span>
           <%= number_to_currency sum_total_price_of_cart %>
       </td>
+      <td>
+        <% unless session[:cart].empty? || session[:cart].size == Settings.quantity.zero %>
+          <%= link_to new_order_path(current_user), class: "btn btn-success" do %>
+            <%= t ".checkout" %> <i class="fa fa-angle-right"></i>
+          <% end %>
+        <% end %>
+      </td>
     </tr>
   </tfoot>
 </table>
