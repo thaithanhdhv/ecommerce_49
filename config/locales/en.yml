@@ -8,6 +8,7 @@ en:
   sold_out: "Sold out"
   update: "Update"
   button_rate: "Rating"
+  cancel_failed: "cancel failed"
   alert_fail: "Fail"
   logout: "Logout"
   add_to_card: "Add to card"
