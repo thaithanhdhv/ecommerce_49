@@ -8,9 +8,9 @@
     <fieldset class="rating">
     <% 5.times do |x| %>
       <%= f.radio_button :starts, 5-x %>
-      <label for="rating_starts_<%= 5-x %>" title="<%= t "ratings.new.star_#{5-x}" %>"></label>
+      <label for="rating_starts_<%= 5-x %>" title="<%= t "ratings.new.star_#{5-x}" %>"><%= t "ratings.new.star_#{5-x}" %></label>
     <% end %>
     </fieldset>
-    <%= f.submit "Rating", id: "submit-rating", class: "btn btn-primary" %>
+    <%= f.submit t("button_rate"), id: "submit-rating", class: "btn btn-primary" %>
   <% end %>
 </div>
