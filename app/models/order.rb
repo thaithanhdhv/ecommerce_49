@@ -7,6 +7,8 @@ class Order < ApplicationRecord
   validates :name, :phone, :address, presence: true
 
   delegate :name, to: :user, prefix: :user
+  delegate :phone, to: :user, prefix: :user
+  delegate :address, to: :user, prefix: :user
 
   scope :status, ->(status){where status: status if status}
   scope :newest, ->{order(created_at: :desc)}

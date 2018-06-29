@@ -1,7 +1,6 @@
 class OrderDetail < ApplicationRecord
   belongs_to :product
   belongs_to :order
-
   delegate :name, to: :product, prefix: :product
 
   scope :by_order_id, ->(order_ids){where order_id: order_ids}

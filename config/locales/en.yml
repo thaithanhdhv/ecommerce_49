@@ -9,7 +9,6 @@ en:
   update: "Update"
   button_rate: "Rating"
   alert_fail: "Fail"
-  currency: "$%{price}"
   logout: "Logout"
   add_to_card: "Add to card"
   order_fail: "order fail"
@@ -63,11 +62,9 @@ en:
   update: "Update"
   name: "Name"
   success_msg: "send mail"
-  name: "Name:"
-  tilte_cate: "Category"
   edit_cate: "Edit"
   validate_quantity_fail: "Not enough quantity."
-  validate_quantity_is_zero: "So luong khong duoc la 0"
+  validate_quantity_is_zero: "Quantity must be greater than 0"
   destroy_cate: "Destroy"
   are_you: "Are you sure?"
   new_cate: "New Category"
@@ -75,26 +72,6 @@ en:
   image_size: "should be less than 5MB"
   sub_title: "Welcome to April"
   error_message: "Somethings wrong, please try again"
-  carts:
-    cart_item:
-      currency: "$%{price}"
-      image_alt: "Edit Entry"
-    index:
-      currency: "$%{price}"
-      cart: "Cart"
-      product: "Product"
-      price: "Price"
-      quantity: "Quantity"
-      subtotal: "Subtotal"
-      total: "Total: "
-      continue_shopping: "Continue Shopping"
-      checkout: "Checkout"
-      login_required: "You must login to be continue."
-    remove_cart:
-      error: "Error occurs!"
-    add_cart:
-      alert_success: "The product has been added to cart."
-      alert_fail: "Error occurs!"
   order_items:
     index:
       invoice: "Invoice"
@@ -171,12 +148,6 @@ en:
   user_mailer:
     check_alert: "Please check your email to activate your account."
     updated: "Profile updated"
-  admin:
-    add_user: "Add new user"
-    create_cate: "Caterory was successfully created."
-    update_cate: "Caterory was successfully update."
-    create_product: "Product was successfully created."
-    update_product: "Product was successfully update."
   products:
     all_product: "All products"
     add_new: "Add product"
@@ -205,6 +176,11 @@ en:
       product_deleted_msg: "Product deleted"
       product_delete_err_msg: "Are you trying to delete the void?"
   carts:
+    remove_cart:
+      error: "Error occurs!"
+    add_cart:
+      alert_success: "The product has been added to cart."
+      alert_fail: "Error occurs!"
     title: "Your Carts"
     product_name: "Product Name"
     price: "Price"
@@ -217,33 +193,28 @@ en:
     index:
       cart: "Cart"
       product: "Product"
-      price: "Price"
-      quantity: "Quantity"
       subtotal: "Subtotal"
       total: "Total: "
       continue_shopping: "Continue Shopping"
       checkout: "Checkout"
-      login_required: "You must login to be continue."
     update_hard_cart:
       validate_quantity_fail: "Not enough quantity."
       validate_quantity_is_zero: "Quantity must be greater than 0"
     remove_cart:
       error: "Error occurs!"
-    add_cart:
-      alert_success: "The product has been added to cart."
-      alert_fail: "Error occurs!"
   admin:
     static_pages:
       home:
         login_required: "Please log in!"
+    add_user: "Add new user"
+    create_cate: "Caterory was successfully created."
+    update_cate: "Caterory was successfully update."
+    create_product: "Product was successfully created."
+    update_product: "Product was successfully update."
     users:
       index:
         page_title: "Users"
         panel_title: "Show list Users"
-        name: "Name"
-        email: "Email"
-        address: "Address"
-        phone: "Phone"
         activated: "Activated"
         active: "• Active"
         inactive: "• Inactive"
@@ -252,17 +223,12 @@ en:
       index:
         page_title: "Products"
         panel_title: "Show list Products"
-        name: "Name"
-        price: "Price"
-        quantity: "Quantity"
         status: "Status"
         rating: "Rating"
-        category: "Category"
+        category: "Category: "
         provider: "Provider"
-      product:
-        sure: "You sure?"
       new:
-        panel_title: "Edit product"
+        panel_title: "Add new product"
         button: "Create"
         min_size_image: "should be less than 1MB"
         over_size: "Maximum file size is 1MB. Please choose a smaller file."
@@ -270,7 +236,7 @@ en:
       image_fields:
         remove: "remove img"
       edit:
-        panel_title: "Add new product"
+        panel_title: "Edit product"
         button: "Edit"
         add_image: "Add image"
         not_empty: "cannot be empty"
@@ -280,8 +246,6 @@ en:
         panel_title: "Show list Categories"
       new:
         button: "Create new cate"
-      create:
-        success: "Success!"
       edit:
         panel_title: "Add new category"
         button: "Edit category"
@@ -289,7 +253,7 @@ en:
   orders:
     title: "Orders"
     id: "STT"
-    status: "Status"
+    status: "Status: %{status}"
     menu_link1: "All Orders"
     menu_link2: "Processing Orders"
     menu_link3: "Accepted Orders"
@@ -305,3 +269,6 @@ en:
   login_notice: "Logged in."
   report_activity: "Report Activity"
   order_report: "Order Report"
+  shipping-info: "Shipping Infomation"
+  share_text: "Share:"
+  login_required: "Please login to continue"

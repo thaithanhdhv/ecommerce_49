@@ -1,5 +1,5 @@
 module Admin
-  class ProductsController < ApplicationController
+  class ProductsController < AdminController
     before_action :load_product, except: %i(index create new)
 
     def index
@@ -27,7 +27,7 @@ module Admin
 
     def update
       if @product.update_attributes product_params
-        flash[:success] = t "admin.update_product"
+        flash[:success] = t "sucess_msg"
         redirect_to admin_products_path
       else
         render :edit
@@ -54,6 +54,10 @@ module Admin
       return if @product
       flash[:warning] = t ".product_nil"
       redirect_to root_path
+    end
+
+    def load_categories
+      @categories = Category.order_name :desc
     end
   end
 end

@@ -1,5 +1,5 @@
 <ul>
-  <% if category.subcategories.present? %>
+  <% if category.subcategories.present? && category.parent_category.blank?  %>
     <li>
       <h4 class="sub-menu">
         <a data-toggle="collapse" href="#cate-<%= category.id %>">

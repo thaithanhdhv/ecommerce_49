@@ -1,4 +1,4 @@
-<h1><%= "#{t("orders.title")} #{params[:order_id]}" %></h1>
+<h1><%= "#{t("orders.title")} #{@order.id}" %></h1>
 <div class="panel panel-default panel-table">
   <div class="panel-body">
     <table class="table table-list table-hover">
@@ -15,6 +15,7 @@
       </tbody>
     </table>
   </div>
+  <%=  render "user" %>
   <div class="panel-footer">
     <div class="row">
       <div class="col col-xs-8">

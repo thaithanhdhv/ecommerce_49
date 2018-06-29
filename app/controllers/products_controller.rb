@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product.order_price
       .paginate page: params[:page], per_page: Settings.product_per_page
-    @categories =  Category.all
+    @categories =  Category.includes(:subcategories).order_name
   end
 
   def show

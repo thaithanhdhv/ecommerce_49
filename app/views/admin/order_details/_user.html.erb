@@ -1,0 +1,35 @@
+<div class="order-info">
+  <h3>
+    <%= t "orders.status", status: @order.status %>
+  </h3>
+  <h3><%= t "mail.total" %><%= number_to_currency @order.total %></h3>
+</div>
+<div class="ship-info">
+  <div class="heading">
+    <h1><%= t "shipping-info" %></h1>
+  </div>
+  <div class="name">
+    <span><%= t "name" %></span>
+    <span class="user-name"><%=  @order.user_name %></span>
+  </div>
+  <div class="adress">
+    <span><%= t "mail.address" %></span>
+    <span><%= @order.user_address %></span>
+  </div>
+  <div class="phone">
+    <span><%= t "mail.phone" %></span>
+    <span><%= @order.user_phone %></span>
+  </div>
+  <div class="action">
+    <% if @order.in_progress? %>
+      <%= form_for [:admin, @order], remote: true do |f| %>
+        <%=  f.hidden_field :status, value: Order.statuses.key(3) %>
+        <%= f.submit t("orders.accept"), class: "btn btn-primary" %>
+      <% end %>
+      <%= form_for [:admin, @order], remote: true do |f| %>
+        <%=  f.hidden_field :status, value: Order.statuses.key(2) %>
+        <%= f.submit t("orders.reject"), class: "btn btn-danger" %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

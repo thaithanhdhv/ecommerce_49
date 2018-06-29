@@ -1,6 +1,6 @@
 <li><%= link_to subcategory.name, fetch_items_path(cat_id: subcategory.id), remote: true %></li>
 <% if subcategory.subcategories.present? %>
   <ul>
-    <%= render partial: "categories/subcategory", locals: {subcategories: subcategory.subcategories} %>
+    <%= render partial: "categories/subcategory", collection: subcategory.subcategories, as: :subcategory %>
   </ul>
 <% end %>
