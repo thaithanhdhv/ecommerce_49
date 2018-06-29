@@ -1,0 +1,31 @@
+<div class="widget">
+  <h4 class="widget-title"><%= t "sort_name" %></h4>
+  <%= form_tag({controller: "products", action: "filter_product"}, remote: true,  method: "get") do %>
+    <%= select_tag :sort_by, options_for_select([[t("sort_name_asc"), "asc"],
+      [t("sort_name_desc"), "desc"]]) %>
+    <%= submit_tag t("submit_btn"), name: nil, class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<div class="widget">
+  <h4 class="widget-title"><%= t "category" %></h4>
+  <ul>
+    <% @categories.each do | cat | %>
+      <li><%= link_to cat.name, fetch_items_path(cat_id: cat.id), remote: true %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="widget">
+  <p>
+    <label for="amount"><%= t "sort_price" %></label>
+    <input type="text" id="amount" readonly>
+  </p>
+  <div id="the_slider"></div>
+  <%= form_tag({controller: "products", action: "filter_product"}, remote: true, id: "ranger-price", method: "get") do %>
+    <%= hidden_field :price_min, :value %>
+    <%= hidden_field :price_max, :value %>
+    <p class= "price-ranger"></p>
+    <%= submit_tag t("submit_btn"), name: nil, class: "btn btn-primary" %>
+  <% end %>
+</div>

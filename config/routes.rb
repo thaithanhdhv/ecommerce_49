@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   resources :search_products, only: :index
   resources :users, except: :index
+  get "/fetch_items", to: "products#filter_product", as: "fetch_items"
+  resources :order_details
+  resources :orders
   resources :categories
   resources :products
   resources :orders do

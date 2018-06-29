@@ -13,6 +13,7 @@ gem "font-awesome-rails"
 gem "i18n-js"
 gem "turbolinks"
 gem "jquery-rails"
+gem "jquery-ui-sass-rails"
 gem "mysql2", ">= 0.3.18", "< 0.6.0"
 gem "puma", "~> 3.7"
 gem "rubocop", "~> 0.49.1", require: false
