@@ -5,7 +5,7 @@
     <%= f.text_area :content, placeholder: t("comment_placeholer"),
       class: "form-control comment-area",id: "form-comment" %>
 
-    <%= f.hidden_field :reply_to,
+    <%= f.hidden_field :reply_to, value: @reply_to,
       class: "form-control comment-area",id: "form-comment" %>
   </div>
   </br>
