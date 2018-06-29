@@ -8,7 +8,18 @@ en:
   add_to_card: "Add to card"
   order_fail: "order fail"
   account: "Account"
+  order_fail: "order fail"
   profile: "Profile"
+  ratings:
+    rating_form:
+      require_login: "Please login to rate product"
+    new:
+      rating_average: "Product Star Rating Average:"
+      star_5: "Kinda bad - 5 stars"
+      star_4: "Kinda bad - 4 stars"
+      star_3: "Meh - 3 stars"
+      star_2: "Sucks big time - 2 star"
+      star_1: "Sucks big time - 1 stars"
   mail:
     thank: "Thanks for using our service"
     thank: "Thanks for using our service"

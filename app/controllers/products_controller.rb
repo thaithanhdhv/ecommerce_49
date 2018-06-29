@@ -8,7 +8,10 @@ class ProductsController < ApplicationController
     @categories =  Category.all
   end
 
-  def show; end
+  def show
+    @rating = current_user.ratings.find_by product_id: @product.id if
+      logged_in? && current_user.rating?(@product)
+  end
 
   def filter_product; end
 

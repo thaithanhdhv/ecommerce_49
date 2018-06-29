@@ -13,6 +13,7 @@ cate_per_page: 10
 category_max: 30
 user_per_page: 10
 product_per_page: 10
+average_total: 0
 page: 1
 max_image_size: 1
 cart_size: 1
@@ -26,3 +27,5 @@ description:
 quantity:
   default: 1
   zero: 0
+rating:
+  point: !ruby/range 1..5

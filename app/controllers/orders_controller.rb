@@ -21,6 +21,7 @@ class OrdersController < ApplicationController
       end
     end
   rescue
+    flash[:danger] = t "order_fail"
     render :new
   end
 

@@ -41,4 +41,8 @@ class User < ApplicationRecord
   def forget
     update_attribute :remember_token, nil
   end
+
+  def rating? product
+    return ratings.find_by(product: product.id).nil? ? false : true
+  end
 end

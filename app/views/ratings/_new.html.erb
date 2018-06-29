@@ -1,0 +1,16 @@
+<%= t ".rating_average" %>
+<span class="rating-average color-red">
+  <%= @product.rate_average.to_f.round 2 %>
+</span>
+<div class="col-xs-10">
+  <%= form_for [@product, current_user.ratings.build], remote: true,
+    authenticity_token: true do |f| %>
+    <fieldset class="rating">
+    <% 5.times do |x| %>
+      <%= f.radio_button :starts, 5-x %>
+      <label for="rating_starts_<%= 5-x %>" title="<%= t "ratings.new.star_#{5-x}" %>"></label>
+    <% end %>
+    </fieldset>
+    <%= f.submit "Rating", id: "submit-rating", class: "btn btn-primary" %>
+  <% end %>
+</div>
