@@ -159,10 +159,7 @@ en:
       content1: "Don't have an account? "
       signup: "Sign up now"
       title: "Log in"
-      submit_btn: "Log in"
       content1: "New user? "
-      label_email: "Email"
-      label_password: "Password"
       remember_content: "Remember me on this computer"
     fail: "Invalid email/password combination"
   user_mailer:
@@ -298,3 +295,4 @@ en:
   sort_name: "Sort by Name"
   sort_price: "Price range"
   submit_btn: "Submit"
+  login_notice: "Logged in."

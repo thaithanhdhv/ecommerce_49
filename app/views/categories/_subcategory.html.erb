@@ -1,12 +1,6 @@
-<ul>
-  <li class="top-clear"><%= subcategory.name %></li>
-  <li>
-    <%= link_to t("edit_cate"), edit_category_path(subcategory) %>
-    <%= link_to t("destroy_cate"), subcategory, method: :delete, data: { confirm: t("are_you") } %>
-  </li>
-  <li>
-    <% if subcategory.subcategories.present? %>
-      <%= render partial: "subcategory", locals: {subcategories: subcategory.subcategories} %>
-    <% end %>
-  </li>
-</ul>
+<li><%= link_to subcategory.name, fetch_items_path(cat_id: subcategory.id), remote: true %></li>
+<% if subcategory.subcategories.present? %>
+  <ul>
+    <%= render partial: "categories/subcategory", locals: {subcategories: subcategory.subcategories} %>
+  </ul>
+<% end %>
