@@ -13,6 +13,7 @@ class User < ApplicationRecord
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   has_secure_password
   validates :password, presence: true, length: {minimum: Settings.pass_min}, allow_nil: true
+  validates :phone, presence: true, numericality: true, length: {minimum: Settings.phone_min, maximum: Settings.phone_max}
 
   scope :newest, ->{order created_at: :desc}
 

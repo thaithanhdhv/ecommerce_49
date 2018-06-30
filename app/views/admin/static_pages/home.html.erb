@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="report-wrapper">
+    <div class="report-header">
+      <h3><%= t "report_activity" %></h3>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="report-box">
+          <div class="account">
+            <h4><%= t "account" %></h4>
+            <p><%= @users.size %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="report-box">
+          <div class="product">
+            <h4><%= t "product" %></h4>
+            <p><%= @product.size %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="report-box">
+          <div class="order">
+            <h4><%= t "orders.title" %></h4>
+            <p><%= @orders.size %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="order-report">
+      <div class="report-header">
+        <h3><%= t "order_report" %></h3>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="report-box">
+            <div>
+              <h4><%= t "mail.total" %></h4>
+              <p><%= @orders.size %></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="report-box">
+            <div>
+              <h4><%= t "orders.menu_link2" %></h4>
+              <p> <%= @orders.in_progress.size %></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="report-box">
+            <div>
+              <h4><%= t "orders.accept" %></h4>
+              <p><%= @orders.approved.size %></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="report-box">
+            <div>
+              <h4><%= t "orders.reject" %></h4>
+              <p> <%= @orders.rejected.size %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
       check_admin user
     else
       flash.now[:danger] = t "sessions.fail"
-      render :new
     end
   end
 
