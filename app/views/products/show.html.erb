@@ -14,7 +14,7 @@
             <div class="col-sm-7">
               <h3 class="product-title"><%= @product.name %></h3>
               <p class="product-des">
-                <%= @product.price %>
+                <%= number_to_currency @product.price %>
               </p>
               <div class="product-action">
                 <div class="product-quantity">
@@ -22,8 +22,12 @@
                   <input type="text" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size = "5">
                   <a class="fa fa-plus btn-number"></a>
                 </div>
-                <%= link_to t("add_to_card"), add_cart_path(@product), remote: true,
-                  method: :get, class: "btn-accent add-to-card" %>
+                <% if @product.quantity > Settings.product_min %>
+                  <%= link_to t("add_to_card"), add_cart_path(@product), remote: true,
+                    method: :get, class: "btn-accent add-to-card" %>
+                <% else %>
+                  <button class = "btn-accent add-to-card"><%= t "sold_out" %></button>
+                <% end %>
               </div>
               <span class="category">Category:
                 <%= link_to @product.category.name, "#" %>
@@ -37,6 +41,18 @@
                   <li><a href="#" class="fa fa-pinterest"></a></li>
                 </ul>
               </div>
+              <% if logged_in? %>
+                <%= render partial: "comments/form" %>
+              <% else %>
+                <%= link_to t("require_login_comment"), login_path, class: "btn btn-warning" %>
+              <% end %>
+            </div>
+          </div>
+          <div class="box" id="comments">
+            <h4><%= t "comment_section" %></h4>
+            <hr>
+            <div class="media comment-product">
+              <%= render @product.comments %>
             </div>
           </div>
           <div class="single-product-content"></div>

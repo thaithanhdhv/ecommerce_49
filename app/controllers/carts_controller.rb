@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
   before_action :set_cart
   before_action :find_product, except: :index
-  before_action :current_cart, :logged_in_user, :quantity_in_cart, only: :index
+  before_action :current_cart, :quantity_in_cart, only: :index
 
   def index; end
 
