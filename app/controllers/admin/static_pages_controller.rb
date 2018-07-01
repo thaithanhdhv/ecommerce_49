@@ -1,9 +1,9 @@
 module Admin
-  class StaticPagesController < ApplicationController
+  class StaticPagesController < AdminController
     def home
-      @users = User.all
-      @orders = Order.all
-      @product = Product.all
+      @users = User.newest
+      @orders = Order.newest
+      @products = Product.newest
     end
   end
 end

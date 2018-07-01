@@ -21,6 +21,7 @@ class Product < ApplicationRecord
   scope :order_name, ->(order){order(name: order)}
   scope :min_max_price, ->(min, max){where("price >= ? AND price <= ?", min, max)}
   scope :by_category, ->(cate_ids){where category_id: cate_ids if cate_ids}
+  scope :newest, ->{order(create_at: :desc)}
 
   private
 

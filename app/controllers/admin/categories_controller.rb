@@ -1,5 +1,5 @@
 module Admin
-  class CategoriesController < ApplicationController
+  class CategoriesController < AdminController
     before_action :load_category, except: %i(index create new)
     before_action :check_parent, only: :update
 
@@ -19,7 +19,7 @@ module Admin
     def create
       @category = Category.new category_params
       if @category.save
-        flash[:info] = t "create_cate"
+        flash[:info] = t "sucess_msg"
         redirect_to admin_categories_path
       else
         render :new

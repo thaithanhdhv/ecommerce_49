@@ -1,3 +1,4 @@
+<% provide :page_title, @product.name %>
 <div id="primary-content">
   <div class="products-single-wrapper clearfix">
     <div class="container">
@@ -13,8 +14,14 @@
             </div>
             <div class="col-sm-7">
               <h3 class="product-title"><%= @product.name %></h3>
+              <p class="product-rating">
+                <% @product.rate_average.to_i.round.times do %>
+                  <i class="fa fa-star"></i>
+                <% end %>
+              </p>
+              <span class="product-price"><%= number_to_currency @product.price %></span>
               <p class="product-des">
-                <%= number_to_currency @product.price %>
+                <%= @product.description %>
               </p>
               <div class="product-action">
                 <div class="product-quantity">
@@ -29,11 +36,12 @@
                   <button class = "btn-accent add-to-card"><%= t "sold_out" %></button>
                 <% end %>
               </div>
-              <span class="category">Category:
+              <span class="category">
+                <%= t "admin.products.index.category" %>
                 <%= link_to @product.category.name, "#" %>
               </span>
               <div class="product-share">
-                <span>Share:</span>
+                <span><%= t "share_text" %></span>
                 <ul class="share-items list-inline">
                   <li><a href="#" class="fa fa-facebook"></a></li>
                   <li><a href="#" class="fa fa-twitter"></a></li>
@@ -55,10 +63,16 @@
               <%= render @product.comments %>
             </div>
           </div>
-          <div class="single-product-content"></div>
-        </div>
-        <div class="row text-center">
-          <%= render partial: "ratings/rating_form" %>
+          <div class="single-product-content justify-content-center d-flex">
+            <div class="col-md-12">
+              <div class="product-rating">
+                <h3 class="rating-title">Rating</h3>
+                <div class="prodduct-rating">
+                  <%= render partial: "ratings/rating_form" %>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

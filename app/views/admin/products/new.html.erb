@@ -17,30 +17,32 @@
         <%= f.text_field :name, class: "form-control" %>
       </div>
 
-      <div class="form-group">
-        <%= f.label :price, t("carts.price") %>
-        <%= f.number_field :price, class: "form-control" %>
+      <div class="form-group d-flex">
+        <div>
+          <%= f.label :price, t("carts.price") %>
+          <%= f.number_field :price, class: "form-control" %>
+        </div>
+        <div class="mg-left-20">
+          <%= f.label :quantity, t("carts.quantity") %>
+          <%= f.number_field :quantity, class: "form-control" %>
+        </div>
       </div>
+      <div class="d-flex">
+        <div class="form-group">
+          <%= f.label :image, t("products.edit.add_image") %>
+          <%= f.file_field :image, class: "form-control"  %>
+        </div>
 
-      <div class="form-group">
-        <%= f.label :quantity, t("carts.quantity") %>
-        <%= f.number_field :quantity, class: "form-control" %>
+        <div class="form-group mg-left-20">
+          <%= f.label :category_id %>
+          <%= f.collection_select :category_id, @categories, :id, :name,
+            {prompt: true}, {class: "form-control"} %>
+        </div>
       </div>
 
       <div class="form-group">
         <%= f.label :description, t("products.desc") %>
         <%= f.text_area :description, class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :image, t("products.edit.add_image") %>
-        <%= f.file_field :image, class: "form-control"  %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :category_id %>
-        <%= f.collection_select :category_id, Category.order(:name), :id, :name,
-          {prompt: true}, {class: "form-control"} %>
       </div>
 
       <%= f.submit t(".button"), class: "btn btn-primary" %>

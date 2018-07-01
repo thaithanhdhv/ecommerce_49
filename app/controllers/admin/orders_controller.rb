@@ -1,5 +1,5 @@
 module Admin
-  class OrdersController < ApplicationController
+  class OrdersController < AdminController
     before_action :load_order, only: :update
 
     def index
