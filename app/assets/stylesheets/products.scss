@@ -156,6 +156,44 @@ span.category {
 .single-product-content {
   margin-top: 50px;
 }
+
 .mg-left-20 {
   margin-left: 20px;
+}
+
+.reply-content {
+  margin-left: 50px;
+  border-top: 1px solid $border_color;
+  > div + div {
+    border-top: 1px solid $border_color;
+  }
+}
+
+.comment-product {
+  .comment-content {
+    margin-left: 20px;
+    font-style: italic;
+  }
+  .media-left {
+    display: flex;
+    align-items: center;
+    .media-heading {
+      margin-bottom: 0;
+      font-size: 20px;
+    }
+  }
+  .option-comment {
+    margin-left: 30px;
+    a {
+      color: $accent_color;
+    }
+  }
+}
+
+#comments {
+  margin-top: 50px;
+}
+
+.product-section-title {
+  font-size: 28px;
 }

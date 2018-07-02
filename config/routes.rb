@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :products, only: %i(index show) do
     resources :comments
-    resources :ratings, only: %i(create)
+    resources :ratings, only: :create
   end
   resources :orders do
     resources :order_details, only: :index
