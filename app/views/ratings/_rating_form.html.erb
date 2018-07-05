@@ -1,8 +1,0 @@
-<% if user_signed_in? %>
-  <h1><%= t "new_rating" %></h1>
-    <%= render "ratings/new" %>
-<% else %>
-  <p>
-    <%= link_to t(".require_login"), new_user_session_path, class: "btn btn-default" %>
-  </p>
-<% end %>

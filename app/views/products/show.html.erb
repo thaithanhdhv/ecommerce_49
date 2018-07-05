@@ -57,22 +57,22 @@
             <div class="comment-product">
               <%= render @product.comments %>
             </div>
-            <div class="comment-new">
-              <h4 class="product-section-title"><%= t "leave_comment" %></h4>
-              <% if user_signed_in? %>
-                <%= render  partial: "comments/form" %>
-              <% else %>
-                <%= link_to t("require_login_comment"), new_user_session_path, class: "btn btn-warning" %>
-              <% end %>
-            </div>
+            <% if can? :create, @comment %>
+              <div class="comment-new">
+                <h4 class="product-section-title"><%= t "leave_comment" %></h4>
+                  <%= render  partial: "comments/form" %>
+              </div>
+            <% end %>
           </div>
           <div class="single-product-content justify-content-center d-flex">
             <div class="col-md-12">
               <div class="product-rating">
                 <h3 class="product-section-title"><%= t "button_rate" %></h3>
                 <div class="prodduct-rating">
-                  <%= render partial: "ratings/old", collection: @ratings, as: :rating %>
-                  <%= render partial: "ratings/rating_form" %>
+                  <%= render @product.ratings %>
+                  <% if can? :create, @rating %>
+                    <%= render partial: "ratings/new" %>
+                  <% end %>
                 </div>
               </div>
             </div>

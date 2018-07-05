@@ -3,9 +3,11 @@
     <div class="media-left">
       <h4 class="media-heading"><%= comment.user_name %></h4>
       <div class="option-comment">
-      <% if user_signed_in? && can_edit_comment?(comment) %>
+      <% if can? :update, comment %>
         <%= link_to t("edit"), edit_product_comment_path(comment.product, comment),
           class: "btn btn-link", remote: true %>
+      <% end %>
+      <% if can? :destroy, comment %>
         <%= link_to t("delete"), product_comment_path(comment.product, comment),
           class: "btn btn-link", remote: true, method: :delete, data: {confirm: t("confirm_delete")} %>
       <% end %>

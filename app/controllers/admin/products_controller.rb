@@ -1,6 +1,6 @@
 module Admin
   class ProductsController < AdminController
-    before_action :load_product, except: %i(index create new)
+    load_and_authorize_resource param_method: :product_params
 
     def index
       @products = Product.includes(:category)
@@ -9,9 +9,7 @@ module Admin
 
     def show; end
 
-    def new
-      @product = Product.new
-    end
+    def new; end
 
     def edit; end
 
@@ -47,13 +45,6 @@ module Admin
 
     def product_params
       params.require(:product).permit :name, :price, :description, :quantity, :image, :category_id
-    end
-
-    def load_product
-      @product = Product.find_by id: params[:id]
-      return if @product
-      flash[:warning] = t ".product_nil"
-      redirect_to root_path
     end
 
     def load_categories

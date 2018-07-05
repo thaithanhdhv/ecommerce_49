@@ -1,7 +1,7 @@
 module Admin
   class CategoriesController < AdminController
-    before_action :load_category, except: %i(index create new)
     before_action :check_parent, only: :update
+    load_and_authorize_resource param_method: :category_params
 
     def index
       @categories = Category.includes(:subcategories)
@@ -10,14 +10,11 @@ module Admin
 
     def show; end
 
-    def new
-      @category = Category.new
-    end
+    def new; end
 
     def edit; end
 
     def create
-      @category = Category.new category_params
       if @category.save
         flash[:info] = t "sucess_msg"
         redirect_to admin_categories_path
@@ -48,12 +45,6 @@ module Admin
 
     def category_params
       params.require(:category).permit :name, :parent_category
-    end
-
-    def load_category
-      @category = Category.find_by id: params[:id]
-      return if @category
-      flash[:warning] = t ".cate_nil"
     end
 
     def check_parent

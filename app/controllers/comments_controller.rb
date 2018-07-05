@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
   before_action :load_product
-  before_action :load_comment, only: %i(edit update destroy)
   before_action :load_comment_reply, only: :new
 
   def new; end
@@ -55,11 +55,6 @@ class CommentsController < ApplicationController
   def load_product
     @product = Product.find_by id: params[:product_id]
     valid_object unless @product
-  end
-
-  def load_comment
-    @comment = @product.comments.find_by id: params[:id]
-    valid_object unless @comment
   end
 
   def load_comment_reply
