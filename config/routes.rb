@@ -10,11 +10,13 @@ Rails.application.routes.draw do
   end
   root "static_pages#home"
   get "/fetch_items", to: "products#filter_product", as: "fetch_items"
-  resources :search_products, only: :index
   resources :categories
   resources :products, only: %i(index show) do
     resources :comments
     resources :ratings, only: :create
+    collection do
+      match "search" => "products#index", via: [:get, :post], as: :search
+    end
   end
   resources :orders do
     resources :order_details, only: :index

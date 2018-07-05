@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   after_action :load_comments, :load_ratings, only: :show
 
   def index
-    @products = Product.order_price
+    @products = @q.result.order_price
       .paginate page: params[:page], per_page: Settings.product_per_page
     @categories =  Category.includes(:subcategories).order_name
   end
@@ -14,13 +14,6 @@ class ProductsController < ApplicationController
   def filter_product; end
 
   private
-
-  def load_product
-    @product = Product.find_by id: params[:id]
-    return if @product
-    flash[:warning] = t ".oproduct_nil"
-    redirect_to root_path
-  end
 
   def load_products
     case

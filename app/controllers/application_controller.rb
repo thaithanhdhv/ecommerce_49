@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_action :set_global_search_variable
 
   include SessionsHelper
   include CartsHelper
@@ -24,6 +25,10 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def set_global_search_variable
+    @q = Product.search params[:q]
+  end
 
   def logged_in_user
     return if user_signed_in?

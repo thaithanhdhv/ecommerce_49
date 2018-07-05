@@ -1,3 +1,8 @@
+<%= search_form_for @q do |f|  %>
+  <%= f.search_field :name_cont %>
+  <%= f.submit name: nil, class: "mg-top-20 btn-primary btn" %>
+<% end %>
+
 <div class="widget">
   <h4 class="widget-title"><%= t "sort_name" %></h4>
   <%= form_tag({controller: "products", action: "filter_product"}, remote: true,  method: "get") do %>
