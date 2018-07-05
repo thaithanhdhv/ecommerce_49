@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  acts_as_paranoid
   attr_accessor :quantity_in_cart
   belongs_to :category
   has_many :order_details

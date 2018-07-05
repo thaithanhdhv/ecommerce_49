@@ -27,6 +27,7 @@ gem "carrierwave", "1.2.2"
 gem "mini_magick", "4.7.0"
 gem "config"
 gem "will_paginate", "3.1.6"
+gem "paranoia", "~> 2.2"
 gem "jquery-turbolinks"
 gem "rails-ujs"
 
