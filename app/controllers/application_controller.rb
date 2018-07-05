@@ -22,8 +22,7 @@ class ApplicationController < ActionController::Base
   end
 
   def is_admin
-    return if logged_in? && current_user.admin?
-    flash[:danger] = t("you_dont_admin")
+    return if user_signed_in? && current_user.admin?
     redirect_to root_path
   end
 

@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
-  get "products/index"
-  get "products/show"
+  devise_for :users, skip: :sessions
+  as :user do
+    get "login", to: "devise/sessions#new", as: :new_user_session
+    post "login", to: "devise/sessions#create", as: :user_session
+    delete "logout", to: "devise/sessions#destroy", as: :destroy_user_session
+  end
   root "static_pages#home"
-  get "/signup", to: "users#new"
-  get "/login", to: "sessions#new"
-  get "/profile", to: "admin/users#show"
-  post "/login", to: "sessions#create"
-  delete "/logout", to: "sessions#destroy"
   get "/fetch_items", to: "products#filter_product", as: "fetch_items"
   resources :search_products, only: :index
   resources :categories
@@ -14,7 +13,6 @@ Rails.application.routes.draw do
     resources :comments
     resources :ratings, only: :create
   end
-  resources :users
   resources :orders do
     resources :order_details, only: :index
   end
