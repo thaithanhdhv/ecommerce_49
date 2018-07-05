@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users, skip: :sessions
+  devise_for :users, skip: :sessions,
+    controllers: {registrations: "users",
+                  sessions: "sessions",
+                  omniauth_callbacks: "omniauth_callbacks"}
   as :user do
-    get "login", to: "devise/sessions#new", as: :new_user_session
-    post "login", to: "devise/sessions#create", as: :user_session
+    get "login", to: "sessions#new", as: :new_user_session
+    post "login", to: "sessions#create", as: :user_session
     delete "logout", to: "devise/sessions#destroy", as: :destroy_user_session
   end
   root "static_pages#home"

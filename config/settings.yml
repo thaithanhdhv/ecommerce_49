@@ -40,3 +40,7 @@ statuses:
   in_progress: "in_progress"
   rejected: "rejected"
   approved: "approved"
+provider:
+  facebook: "Facebook"
+host: "localhost"
+port: 3000
