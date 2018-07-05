@@ -1,13 +1,8 @@
-<div id="product-rating">
-  <% if logged_in? %>
-    <% if current_user.rating? @product %>
-      <%= render "ratings/old" %>
-    <% else %>
-      <%= render "ratings/new" %>
-    <% end %>
-  <% else %>
+<% if user_signed_in? %>
+  <h1><%= t "new_rating" %></h1>
+    <%= render "ratings/new" %>
+<% else %>
   <p>
-    <%= link_to t(".require_login"), login_path, remote: true , class: "btn btn-default" %>
+    <%= link_to t(".require_login"), new_user_session_path, class: "btn btn-default" %>
   </p>
-  <% end %>
-</div>
+<% end %>
