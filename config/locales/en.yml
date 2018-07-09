@@ -276,3 +276,7 @@ en:
   comment_section: "Comments"
   leave_comment: "Leave a new comment"
   reply_text: "Reply"
+  new_rating: "Leave new Review"
+  time:
+    formats:
+      time_format: "at %I:%M%p on %m/%d/%Y"

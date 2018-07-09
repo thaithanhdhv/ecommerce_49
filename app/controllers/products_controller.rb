@@ -10,8 +10,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @rating = current_user.ratings.find_by product_id: @product.id if
-      logged_in? && current_user.rating?(@product)
+    @ratings = @product.ratings
   end
 
   def filter_product; end
@@ -39,6 +38,6 @@ class ProductsController < ApplicationController
   def load_comments
     @comments = @product.comments.includes(:users)
       .paginate page: params[:page], per_page: Settings.paginate.comment_perpage
-    @comment = current_user.comments.build if logged_in?
+    @comment = current_user.comments.build if user_signed_in?
   end
 end

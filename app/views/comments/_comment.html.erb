@@ -3,14 +3,11 @@
     <div class="media-left">
       <h4 class="media-heading"><%= comment.user_name %></h4>
       <div class="option-comment">
-      <% if logged_in? && can_edit_comment?(comment) %>
+      <% if user_signed_in? && can_edit_comment?(comment) %>
         <%= link_to t("edit"), edit_product_comment_path(comment.product, comment),
           class: "btn btn-link", remote: true %>
         <%= link_to t("delete"), product_comment_path(comment.product, comment),
           class: "btn btn-link", remote: true, method: :delete, data: {confirm: t("confirm_delete")} %>
-      <% end %>
-      <% if logged_in? %>
-        <%= link_to t("reply_text"), new_product_comment_path(comment.product, comment_id: comment.id), remote: true, class: "btn btn-link" %>
       <% end %>
     </div>
     </div>
@@ -21,8 +18,22 @@
           <%= render partial: "comments/subcomment", collection: comment.reply_comments, as: :comment %>
         </div>
       <% end %>
+      <% if user_signed_in? %>
+        <div class="reply-form">
+          <%= form_for [@product, @product.comments.build], class: "form-control", remote: true do |f| %>
+            <div class="field">
+              <%= render "shared/error_messages", object: f.object %>
+
+              <%= f.text_field :content, placeholder: t("comment_placeholer"),
+                class: "form-control comment-area" %>
+
+              <%= f.hidden_field :reply_to, value: comment.id,
+                class: "form-control comment-area",id: "form-comment" %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
       <hr>
     </div>
-    <div id="reply-form-<%= comment.id %>"></div>
   </div>
 <% end %>

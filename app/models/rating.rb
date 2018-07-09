@@ -2,6 +2,8 @@ class Rating < ApplicationRecord
   belongs_to :product
   belongs_to :user
 
+  delegate :name, to: :user, prefix: :user
+
   after_save :update_product_rate_average
 
   validates :starts, presence: true, inclusion: Settings.rating.starts,

@@ -1,5 +1,5 @@
 class RatingsController < ApplicationController
-   before_action :logged_in_user
+  before_action :logged_in_user
 
   def create
     if Product.exists? params[:product_id]
@@ -7,7 +7,7 @@ class RatingsController < ApplicationController
       @product = Product.find params[:product_id] if @rating.save
     end
     respond_to do |format|
-      format.html {redirect_to request.referrer}
+      format.html{redirect_to request.referer}
       format.js
     end
   end
@@ -16,6 +16,6 @@ class RatingsController < ApplicationController
 
   def rating_params
     params[:rating][:product_id] = params[:product_id]
-    params.require(:rating).permit :starts, :product_id
+    params.require(:rating).permit :starts, :product_id, :content
   end
 end

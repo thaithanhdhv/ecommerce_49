@@ -1,8 +1,16 @@
-<%= t ".rating_average" %>
-<span class="rating-average color-red">
-  <%= @product.rate_average.to_f.round 2 %>
-</span>
-<p>
-  <%= t ".your_score" %>
-  <span class="your_score color-red"><%= @rating.starts.to_i %></span>
-</p>
+<div class="rating">
+  <div>
+    <p>
+      <%= rating.user_name %>
+      <small>
+        <%= l rating.created_at, format: :time_format %>
+      </small>
+      <span class="your_score color-red">
+        <% rating.starts.to_i.times do %>
+          <i class="fa fa-star"></i>
+        <% end %>
+      </span>
+    </p>
+    <p><%= rating.content %></p>
+  </div>
+</div>

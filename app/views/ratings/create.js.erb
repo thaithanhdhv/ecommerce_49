@@ -1,5 +1,5 @@
 <% if @product.present? %>
-  $('#product-rating').html('<%= j render "old" %>');
+  $('#product-rating').html('<%= j render partial: "ratings/old", collection: @product.ratings, as: :rating %>');
   alert('success');
 <% else %>
   alert('error');
