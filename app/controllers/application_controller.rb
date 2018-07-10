@@ -4,6 +4,17 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include CartsHelper
 
+  rescue_from CanCan::AccessDenied do
+    respond_to do |format|
+      format.json{head :forbidden}
+      format.html{redirect_to root_path, alert: t("flash_warning_user")}
+    end
+  end
+
+  rescue_from ActiveRecord::RecordNotFound do
+    render file: "public/404.html", status: 404, layout: true
+  end
+
   def valid_object object
     render file: "public/404.html", status: 404, layout: true unless object
   end

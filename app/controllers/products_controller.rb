@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
-  before_action :load_product, only: :show
+  load_and_authorize_resource
   before_action :load_products, only: :filter_product
-  after_action :load_comments, only: :show
+  after_action :load_comments, :load_ratings, only: :show
 
   def index
     @products = Product.order_price
@@ -9,9 +9,7 @@ class ProductsController < ApplicationController
     @categories =  Category.includes(:subcategories).order_name
   end
 
-  def show
-    @ratings = @product.ratings
-  end
+  def show; end
 
   def filter_product; end
 
@@ -39,5 +37,10 @@ class ProductsController < ApplicationController
     @comments = @product.comments.includes(:users)
       .paginate page: params[:page], per_page: Settings.paginate.comment_perpage
     @comment = current_user.comments.build if user_signed_in?
+  end
+
+  def load_ratings
+    @ratings = @product.ratings.includes(:users)
+    @rating = current_user.ratings.build if user_signed_in?
   end
 end

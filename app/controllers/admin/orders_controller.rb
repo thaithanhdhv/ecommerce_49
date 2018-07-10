@@ -1,6 +1,6 @@
 module Admin
   class OrdersController < AdminController
-    before_action :load_order, only: :update
+    load_and_authorize_resource
 
     def index
       @orders = Order.status(params[:status])
@@ -19,15 +19,6 @@ module Admin
           render :index
         end
       end
-    end
-
-    private
-
-    def load_order
-      @order = Order.find_by id: params[:id]
-      return if @order
-      flash[:danger] = t "error_message"
-      redirect_to admin_root_path
     end
   end
 end

@@ -3,8 +3,8 @@ class Product < ApplicationRecord
   belongs_to :category
   has_many :order_details
   has_many :orders, through: :order_details
-  has_many :ratings
-  has_many :comments
+  has_many :ratings, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   delegate :name, to: :category, prefix: :category
 
