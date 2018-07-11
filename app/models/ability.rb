@@ -3,6 +3,7 @@ class Ability
 
   def initialize user
     can :read, :all
+    can :search, Product
     if user.present?
       can :create, Comment
       can %i(update destroy), Comment, user_id: user.id

@@ -12,7 +12,8 @@ header {
     box-shadow: 0 3px 7px -3px $color_shadow;
     ul.navbar-nav li.search-form {
       input {
-        border-color: $dark_color;
+        border: 1px solid $dark_color;
+        padding: 0 10px;
       }
     }
   }
