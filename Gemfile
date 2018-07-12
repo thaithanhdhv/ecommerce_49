@@ -29,6 +29,8 @@ gem "mini_magick", "4.7.0"
 gem "config"
 gem "will_paginate", "3.1.6"
 gem "paranoia", "~> 2.2"
+gem "friendly_id", "~> 5.1.0"
+gem "social-share-button"
 gem "jquery-turbolinks"
 gem "rails-ujs"
 
@@ -36,6 +38,13 @@ group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "capybara", "~> 2.13"
   gem "selenium-webdriver"
+  gem "rspec-rails", "~> 3.7"
+  gem "factory_bot_rails"
+end
+
+group :test do
+  gem "shoulda-matchers", "~> 3.1"
+  gem "faker"
 end
 
 group :development do
