@@ -1,4 +1,38 @@
 en:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "can't be blank"
+              taken: "has already been taken"
+              invalid: "is invalid"
+            password:
+              blank: "can't be blank"
+              confirmation: "doesn't match password"
+              too_short: "is too short (minimum is 6 characters)"
+            name:
+              too_long: "is too long"
+        category:
+          attributes:
+            name:
+              blank: "can't be blank"
+              taken: "has already been taken"
+              too_long: "is too long (maximum is 30 characters)"
+        product:
+          attributes:
+            price:
+              blank: "can't be blank"
+            name:
+              blank: "can't be blank"
+            quantity:
+              blank: "can't be blank"
+              not_an_integer: "is not a interger"
+              greater_than: "must be greater 0"
+            description:
+              blank: "can't be blank"
+              too_long: "is too long"
   hello: "Hello world"
   name: "Name"
   alert_success: "OK"

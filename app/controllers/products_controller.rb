@@ -9,7 +9,10 @@ class ProductsController < ApplicationController
     @categories =  Category.includes(:subcategories).order_name
   end
 
-  def show; end
+  def show
+    @comment = current_user.comments.build
+    @rating = current_user.ratings.build
+  end
 
   def filter_product; end
 
@@ -29,11 +32,9 @@ class ProductsController < ApplicationController
   def load_comments
     @comments = @product.comments.includes(:users)
       .paginate page: params[:page], per_page: Settings.paginate.comment_perpage
-    @comment = current_user.comments.build if user_signed_in?
   end
 
   def load_ratings
     @ratings = @product.ratings.includes(:users)
-    @rating = current_user.ratings.build if user_signed_in?
   end
 end

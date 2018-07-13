@@ -1,5 +1,7 @@
 class Product < ApplicationRecord
   acts_as_paranoid
+  extend FriendlyId
+  friendly_id :name, use: [:slugged, :finders]
   attr_accessor :quantity_in_cart
   belongs_to :category
   has_many :order_details
